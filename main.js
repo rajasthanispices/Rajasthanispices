@@ -6,7 +6,7 @@
 const hamburger = document.getElementById('hamburger');
 const mainNav = document.getElementById('mainNav');
 
-if (hamburger) {
+if (hamburger && mainNav) {
   hamburger.addEventListener('click', () => {
     mainNav.classList.toggle('active');
     hamburger.classList.toggle('active');
@@ -16,96 +16,154 @@ if (hamburger) {
 // Close nav on link click (mobile)
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => {
-    mainNav.classList.remove('active');
-    hamburger.classList.remove('active');
+    if (mainNav) mainNav.classList.remove('active');
+    if (hamburger) hamburger.classList.remove('active');
   });
 });
 
-// Active nav link on scroll
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-
-function setActiveNav() {
-  const scrollPos = window.scrollY + 120;
-  sections.forEach(section => {
-    const top = section.offsetTop;
-    const height = section.offsetHeight;
-    const id = section.getAttribute('id');
-    if (scrollPos >= top && scrollPos < top + height) {
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${id}`) {
-          link.classList.add('active');
-        }
-      });
+// Set Active Link based on current page URL
+function setPathActiveNav() {
+  const currentPath = window.location.pathname;
+  document.querySelectorAll('.main-nav .nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && (href === currentPath || (currentPath === '/' && href === '/index.html') || (currentPath.endsWith(href) && href !== '/'))) {
+      link.classList.add('active');
     }
   });
 }
-window.addEventListener('scroll', setActiveNav);
+document.addEventListener('DOMContentLoaded', setPathActiveNav);
 
-// Scroll animations (Intersection Observer)
-const animateElements = document.querySelectorAll(
-  '.about-feature, .product-card, .why-item, .service-card, .market-item'
-);
+// Modal Handling
+const enquiryModal = document.getElementById('enquiryModal');
+const modalCloseBtn = document.getElementById('modalCloseBtn');
 
-animateElements.forEach(el => el.classList.add('animate-in'));
+function openEnquiryModal(productName = '') {
+  if (!enquiryModal) return;
+  const modalProdInput = document.getElementById('modalFormProduct');
+  if (modalProdInput && productName) {
+    modalProdInput.value = productName;
+  }
+  enquiryModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, index * 80);
-      observer.unobserve(entry.target);
+function closeEnquiryModal() {
+  if (!enquiryModal) return;
+  enquiryModal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+if (modalCloseBtn) {
+  modalCloseBtn.addEventListener('click', closeEnquiryModal);
+}
+
+if (enquiryModal) {
+  enquiryModal.addEventListener('click', (e) => {
+    if (e.target === enquiryModal) {
+      closeEnquiryModal();
     }
   });
-}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+}
 
-animateElements.forEach(el => observer.observe(el));
+// Attach event listeners to all modal triggers
+document.addEventListener('click', (e) => {
+  const trigger = e.target.closest('[data-open-modal]');
+  if (trigger) {
+    e.preventDefault();
+    const prodName = trigger.getAttribute('data-product') || '';
+    openEnquiryModal(prodName);
+  }
+});
 
 // Header shadow on scroll
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 20) {
-    header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.12)';
-  } else {
-    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.08)';
+  if (header) {
+    if (window.scrollY > 20) {
+      header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.12)';
+    } else {
+      header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.08)';
+    }
   }
 });
 
-// Form submission
+// Form submission handler (for contact & modal forms)
+function handleEnquirySubmit(event, formPrefix = 'form') {
+  event.preventDefault();
+  
+  const nameEl = document.getElementById(`${formPrefix}Name`);
+  const companyEl = document.getElementById(`${formPrefix}Company`);
+  const phoneEl = document.getElementById(`${formPrefix}Phone`);
+  const productEl = document.getElementById(`${formPrefix}Product`);
+  const qtyEl = document.getElementById(`${formPrefix}Qty`);
+  const messageEl = document.getElementById(`${formPrefix}Message`);
+  const countryEl = document.getElementById(`${formPrefix}Country`);
+
+  const name = nameEl ? nameEl.value : '';
+  const company = companyEl ? companyEl.value : '';
+  const phone = phoneEl ? phoneEl.value : '';
+  const product = productEl ? productEl.value : 'General Enquiry';
+  const qty = qtyEl ? qtyEl.value : 'N/A';
+  const message = messageEl ? messageEl.value : '';
+  const country = countryEl ? countryEl.value : 'India';
+
+  const waMessage = `Hello Rajasthan Trading & Manufactures!%0A%0AName: ${name}%0ACompany: ${company} (${country})%0APhone: ${phone}%0AProduct/Topic: ${product}%0AEst. Quantity: ${qty}%0AMessage: ${message}`;
+  
+  window.open(`https://wa.me/919829377723?text=${waMessage}`, '_blank');
+
+  if (enquiryModal && enquiryModal.classList.contains('active')) {
+    closeEnquiryModal();
+  }
+}
+
 const enquiryForm = document.getElementById('enquiryForm');
 if (enquiryForm) {
-  enquiryForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('formName').value;
-    const company = document.getElementById('formCompany').value;
-    const phone = document.getElementById('formPhone').value;
-    const product = document.getElementById('formProduct').value;
-    const qty = document.getElementById('formQty').value;
-    const message = document.getElementById('formMessage').value;
-    const country = document.getElementById('formCountry').value;
+  enquiryForm.addEventListener('submit', (e) => handleEnquirySubmit(e, 'form'));
+}
 
-    // Build WhatsApp message
-    const waMessage = `Hello! I'm ${name} from ${company} (${country}).%0A%0AProduct Required: ${product}%0AQuantity: ${qty}%0APhone: ${phone}%0A%0A${message}`;
-    
-    window.open(`https://wa.me/919829377723?text=${waMessage}`, '_blank');
+const modalEnquiryForm = document.getElementById('modalEnquiryForm');
+if (modalEnquiryForm) {
+  modalEnquiryForm.addEventListener('submit', (e) => handleEnquirySubmit(e, 'modalForm'));
+}
+
+// Product Filtering Tabs (on products.html)
+const filterBtns = document.querySelectorAll('.product-filter-btn');
+const productCards = document.querySelectorAll('.product-grid-extended .product-card');
+
+if (filterBtns.length > 0) {
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      productCards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
   });
 }
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      const headerHeight = header.offsetHeight;
-      const targetPos = target.offsetTop - headerHeight - 10;
-      window.scrollTo({
-        top: targetPos,
-        behavior: 'smooth'
-      });
+    const href = this.getAttribute('href');
+    if (href.length > 1) {
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        const headerHeight = header ? header.offsetHeight : 80;
+        const targetPos = target.offsetTop - headerHeight - 10;
+        window.scrollTo({
+          top: targetPos,
+          behavior: 'smooth'
+        });
+      }
     }
   });
 });
