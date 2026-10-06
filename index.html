@@ -1,68 +1,579 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us | Rajasthan Trading & Manufactures</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--green:#075b3f;--deep:#004c35;--cream:#f8f3e8;--ink:#10221c;--muted:#5e6964;--red:#d72e2e;--line:#e5e9e5}
-*{box-sizing:border-box}body{margin:0;font-family:Manrope,Arial,sans-serif;color:var(--ink);background:#fff}
-.top{height:30px;background:#075b3f;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 4%;font-size:11px}
-.nav{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 4%;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
-.brand{display:flex;align-items:center;gap:12px}.brand img{width:58px;height:58px;object-fit:contain}.brand b{font-size:17px;color:#075b3f;display:block}.brand span{font-size:10px;letter-spacing:.12em}
-.links{display:flex;gap:24px;font-size:12px;font-weight:600}.links a{color:#23332d;text-decoration:none}.links a.active{color:#075b3f;border-bottom:2px solid #075b3f;padding-bottom:7px}
-.btn{display:inline-block;padding:12px 18px;border-radius:7px;text-decoration:none;font-weight:700;font-size:12px}.primary{background:var(--green);color:#fff}.outline{border:1px solid var(--green);color:var(--green);background:#fff}
-.hero{min-height:420px;background:var(--cream);display:grid;grid-template-columns:40% 60%;overflow:hidden}.hero-copy{padding:75px 8% 55px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--green);text-transform:uppercase;margin-bottom:12px}.hero h1{font-size:48px;line-height:1.05;margin:0 0 18px}.hero h1 em{color:var(--green);font-style:normal}.hero p{font-size:14px;line-height:1.7;color:#45504b;max-width:520px}.hero-img{background:url('images/hero.jpg') center/cover no-repeat;min-height:420px}
-.section{padding:72px 5%;max-width:1280px;margin:auto}.two{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.visual{border-radius:16px;overflow:hidden}.visual img{width:100%;display:block}.title{font-size:34px;line-height:1.15;margin:0 0 16px}.text{color:var(--muted);font-size:14px;line-height:1.75}.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}.fact{border:1px solid var(--line);border-radius:10px;padding:18px;background:#fff}.fact strong{display:block;font-size:12px;margin-bottom:7px;color:var(--green)}.fact small{font-size:10px;line-height:1.45;color:#68736e}
-.quote{background:var(--green);color:#fff;padding:48px 7%;display:flex;align-items:center;justify-content:space-between;gap:40px}.quote h2{font-size:27px;max-width:760px;margin:8px 0}.quote p{opacity:.85;font-size:13px}.since{font-size:15px;font-weight:800;white-space:nowrap}
-.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:28px}.card{border:1px solid var(--line);border-radius:12px;padding:22px;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.04)}.icon{width:42px;height:42px;border-radius:50%;background:#e6f2ed;color:var(--green);display:grid;place-items:center;font-weight:800;margin-bottom:14px}.card h3{font-size:16px;margin:0 0 8px}.card p{font-size:11px;line-height:1.55;color:var(--muted);margin:0}
-.facility{background:var(--green);color:#fff}.facility .text{color:#dceae4}.facility-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}.facility-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px}.facility-imgs img{width:100%;height:250px;object-fit:cover;border-radius:12px}
-.portfolio{display:grid;grid-template-columns:1.5fr .8fr;gap:30px;align-items:stretch}.portfolio-main img{width:100%;height:330px;object-fit:cover;border-radius:14px}.pack{background:#fbf4e3;padding:25px;border-radius:14px}.pack img{width:100%;height:120px;object-fit:cover;border-radius:10px;margin-bottom:14px}
-.buyers{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:28px}.buyer{text-align:center;border:1px solid var(--line);border-radius:12px;padding:20px 10px}.buyer .icon{margin:0 auto 10px}.buyer h4{font-size:12px;margin:0 0 7px}.buyer p{font-size:9px;line-height:1.45;color:var(--muted);margin:0}
-.cta{margin-top:40px;background:linear-gradient(90deg,#075b3f 55%,transparent),url('images/partnership.jpg') center/cover;border-radius:18px;color:#fff;padding:55px 45px}.cta h2{font-size:31px;margin:0 0 8px}.cta p{font-size:13px;max-width:560px;line-height:1.6}
-footer{background:#003d2c;color:#fff;padding:45px 5%;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;font-size:11px}.footer-brand{font-size:18px;font-weight:800}.footer-brand small{display:block;font-size:9px;letter-spacing:.1em;margin-top:6px}.footer h4{margin:0 0 12px}.footer a{display:block;color:#d9e8e1;text-decoration:none;margin:7px 0}
-@media(max-width:900px){.links{display:none}.hero{grid-template-columns:1fr}.hero-img{min-height:300px}.two,.facility-grid,.portfolio{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.buyers{grid-template-columns:repeat(2,1fr)}.facts{grid-template-columns:repeat(2,1fr)}footer{grid-template-columns:1fr 1fr}.hero h1{font-size:38px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajasthan Trading & Manufactures | Indian Products. Trusted Supply. Global Business.</title>
+  <meta name="description" content="Rajasthan Trading & Manufactures - Leading manufacturer and trader of premium spices, agricultural commodities, food products and other selected commodities for domestic and international markets." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-<div class="top"><span>✉ rajasthantrading23@gmail.com</span><span>+91 98293 77723</span><span>GSTIN: 08FWCPS1387D1ZB</span><span>Bhawani Mandi, Jhalawar, Rajasthan</span></div>
-<nav class="nav">
-<div class="brand"><div style="width:58px;height:58px;border:2px solid #075b3f;border-radius:50%;display:grid;place-items:center;color:#075b3f;font-weight:800">RTM</div><div><b>RAJASTHAN TRADING &<br>MANUFACTURES</b><span>INNOVATION, TRUST, QUALITY</span></div></div>
-<div class="links"><a href="#">Home</a><a class="active" href="#">About Us</a><a href="#">Products</a><a href="#">Manufacturing</a><a href="#">Export</a><a href="#">Private Label</a><a href="#">Quality</a><a href="#">Contact Us</a></div>
-<a class="btn primary" href="#">Get a Quote</a>
-</nav>
 
-<section class="hero"><div class="hero-copy"><div class="eyebrow">About Rajasthan Trading & Manufactures</div><h1>More Than Spices.<br>A <em>Stronger</em>,<br>Reliable Supply Chain.</h1><p>Since 2007, Rajasthan Trading & Manufactures has been committed to delivering premium spices, food products and agro commodities to businesses across India and international markets.</p><a class="btn primary" href="#">Our Story →</a></div><div class="hero-img"></div></section>
+  <!-- ========== TOP BAR ========== -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <a href="mailto:rajasthanigold23@gmail.com"><i class="fas fa-envelope"></i> rajasthanigold23@gmail.com</a>
+        <a href="tel:+919829377723"><i class="fas fa-phone-alt"></i> +91 98293 77723</a>
+      </div>
+      <div class="top-bar-right">
+        <span><strong>GSTIN:</strong> 08FWCPS1387D1ZB</span>
+        <span><i class="fas fa-map-marker-alt"></i> Bhawani Mandi, Jhalawar, Rajasthan</span>
+      </div>
+    </div>
+  </div>
 
-<section class="section"><div class="two"><div class="visual"><img src="images/company-profile.jpg"></div><div><div class="eyebrow">Company Profile</div><h2 class="title">Rajasthan Trading & Manufactures (RTM)</h2><p class="text">Established in 2007, RTM is based in Bhawani Mandi, Jhalawar, Rajasthan. We manufacture, trade and supply quality spices, food products and agro commodities to domestic and international markets, with a focus on consistency, timely supply and long-term business relationships.</p><div class="facts"><div class="fact"><strong>Company</strong><small>Rajasthan Trading & Manufactures</small></div><div class="fact"><strong>Headquarters</strong><small>Plot No. J126/A, RIICO Industrial Area</small></div><div class="fact"><strong>GSTIN</strong><small>08FWCPS1387D1ZB</small></div><div class="fact"><strong>Tagline</strong><small>Innovation, Trust, Quality</small></div></div></div></div></section>
+  <!-- ========== HEADER / NAVBAR ========== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#home" class="logo-area">
+        <img src="/Company logo.png" alt="Rajasthan Trading & Manufactures Logo" class="header-logo-img" />
+        <div class="logo-text">
+          <h1 class="logo-title">
+            <span class="logo-green">RAJASTHAN TRADING &amp;</span><br>
+            <span class="logo-red">MANUFACTURES</span>
+          </h1>
+          <p class="logo-tagline">INNOVATION, TRUST, QUALITY</p>
+        </div>
+      </a>
 
-<section class="quote"><div><div class="eyebrow" style="color:#bfe1d2">Our Guiding Principle · Since 2007</div><h2>“Delivering consistent quality with reliable supply and long-term business relationships.”</h2><p>Our experience in the food and spice industry shapes every sourcing, processing and supply decision.</p></div><div class="since">SINCE<br>2007</div></section>
+      <nav class="main-nav" id="mainNav">
+        <a href="/index.html" class="nav-link active">Home</a>
+        <a href="/about.html" class="nav-link">About Us</a>
+        <a href="/products.html" class="nav-link">Products</a>
+        <a href="/private-label.html" class="nav-link">Private Label</a>
+        <a href="/export.html" class="nav-link">Export</a>
+        <a href="/quality.html" class="nav-link">Quality &amp; Sourcing</a>
+      </nav>
 
-<section class="section"><div class="eyebrow">Our Core Business Capabilities</div><h2 class="title">End-to-End Solutions for the Spice Industry</h2><div class="cards">
-<div class="card"><div class="icon">M</div><h3>Manufacturing</h3><p>Hygienic spice milling & processing plant with quality control at every stage.</p></div>
-<div class="card"><div class="icon">T</div><h3>Trading</h3><p>APMC Mandi bulk trading in spices and commodities.</p></div>
-<div class="card"><div class="icon">S</div><h3>Direct Sourcing</h3><p>Farm & APMC Mandi direct procurement for better quality and pricing.</p></div>
-<div class="card"><div class="icon">P</div><h3>Private Label</h3><p>End-to-end white label contract packaging for your brand.</p></div>
-<div class="card"><div class="icon">E</div><h3>Export Desk</h3><p>Global container freight (FOB / CIF) to GCC, Asia & Africa.</p></div>
-</div></section>
+      <div class="header-actions">
+        <a href="/contact.html" class="btn-quote">Contact Us</a>
+      </div>
 
-<section class="section facility"><div class="facility-grid"><div><div class="eyebrow" style="color:#bfe1d2">Our Facility</div><h2 class="title">Modern Infrastructure for Consistent Quality</h2><p class="text">Our manufacturing plant in Bhawani Mandi, Rajasthan is equipped for cleaning, drying, milling and processing spices under strict hygiene and quality control standards. We support consistent quality, timely supply and customized processing as per buyer requirements.</p><a class="btn outline" href="#">View Manufacturing Process →</a></div><div class="facility-imgs"><img src="images/facility-1.jpg"><img src="images/facility-2.jpg"></div></div></section>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-<section class="section"><div class="eyebrow">Spice Portfolio & Packing Formats</div><h2 class="title">Rich Indian Spices & Agro Commodities</h2><div class="portfolio"><div class="portfolio-main"><img src="images/spice-portfolio.jpg"></div><div class="pack"><h3>Packing Formats</h3><img src="images/packing.jpg"><p><b>Retail Packs</b><br>Pouches, Jars & Mono Cartons (50g to 1kg)</p><p><b>Bulk Packs</b><br>25kg / 50kg PP & Jute Sacks with inner poly liner.</p><p><b>Custom Specifications</b><br>Tailored mesh size, ASTA color and purity ratings.</p></div></div></section>
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="home">
+    <!-- Full-width exact reference background image -->
+    <div class="hero-bg">
+      <img src="/images/hero_banner_exact.png" alt="Rajasthan Trading &amp; Manufactures" class="hero-bg-img" />
+    </div>
 
-<section class="section"><div class="eyebrow">Our Target Buyer Segments</div><h2 class="title">Partnering with Businesses Across the Value Chain</h2><div class="buyers">
-<div class="buyer"><div class="icon">D</div><h4>Distributors</h4><p>Reliable supply & consistent specs for national networks.</p></div>
-<div class="buyer"><div class="icon">W</div><h4>Wholesalers</h4><p>Competitive bulk sourcing for wholesale buyers.</p></div>
-<div class="buyer"><div class="icon">R</div><h4>Retailers</h4><p>Shelf-ready packaging and private label solutions.</p></div>
-<div class="buyer"><div class="icon">H</div><h4>HORECA Businesses</h4><p>High-purity spices for hotels, restaurants & catering.</p></div>
-<div class="buyer"><div class="icon">I</div><h4>Institutional Buyers</h4><p>Structured procurement contracts & lab-certified supply.</p></div>
-<div class="buyer"><div class="icon">G</div><h4>Global Trading Companies</h4><p>Export-grade commodities with shipping documentation.</p></div>
-</div>
-<div class="cta"><h2>Let’s Build a Long-Term Partnership</h2><p>Whether you are a distributor, importer, retailer or food business, we are ready to be your trusted supply partner with quality products and reliable supply.</p><a class="btn outline" href="#">Send an Enquiry →</a></div></section>
+    <!-- Transparent Interactive Hotspot Links overlaying exact image buttons -->
+    <div class="hero-hotspots-layer">
+      <a href="#products" class="hero-transparent-hotspot spot-explore" aria-label="Explore Products"></a>
+      <a href="#contact" class="hero-transparent-hotspot spot-enquiry" aria-label="Send Enquiry"></a>
+    </div>
+  </section>
 
-<footer><div><div class="footer-brand">RAJASTHAN TRADING & MANUFACTURES</div><small>INNOVATION, TRUST, QUALITY</small></div><div><h4>Address</h4>Plot No. J126/A, RIICO Industrial Area, Bhawani Mandi, Jhalawar – 326502</div><div><h4>Contact</h4>+91 98293 77723<br>rajasthantrading23@gmail.com<br>GSTIN: 08FWCPS1387D1ZB</div><div><h4>Quick Links</h4><a href="#">Home</a><a href="#">About Us</a><a href="#">Products</a><a href="#">Manufacturing</a><a href="#">Export</a><a href="#">Contact Us</a></div></footer>
+  <!-- ========== ABOUT US SECTION ========== -->
+  <section class="about-section" id="about">
+    <div class="container about-inner">
+      <div class="about-text">
+        <div class="section-label"><span class="label-line"></span> About Us</div>
+        <h2 class="about-title">Rajasthan Trading &amp;<br>Manufactures</h2>
+        <p class="about-desc">Based in Bhawani Mandi, Jhalawar, Rajasthan, India, we operate in manufacturing, sourcing, trading and supply of quality food products and selected commodities. With years of experience in the spice industry, we are committed to consistent quality, timely supply and long-term business relationships.</p>
+        <a href="#contact" class="btn btn-outline-dark">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="about-image-wrap">
+        <img src="/images/about_factory_crisp.png" alt="RTM Manufacturing Facility" class="about-img" />
+      </div>
+
+      <div class="about-features">
+        <div class="about-feature">
+          <div class="feature-icon"><i class="fas fa-industry"></i></div>
+          <span>Manufacturing & Trading</span>
+        </div>
+        <div class="about-feature">
+          <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+          <span>Quality Control</span>
+        </div>
+        <div class="about-feature">
+          <div class="feature-icon"><i class="fas fa-boxes"></i></div>
+          <span>Bulk & Retail Supply</span>
+        </div>
+        <div class="about-feature">
+          <div class="feature-icon"><i class="fas fa-tags"></i></div>
+          <span>Private Label Support</span>
+        </div>
+        <div class="about-feature">
+          <div class="feature-icon"><i class="fas fa-globe-asia"></i></div>
+          <span>Domestic & Export Supply</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCT CATEGORIES ========== -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-tag"><span class="tag-line"></span> OUR PRODUCT CATEGORIES</p>
+        <h2 class="section-title">Premium Products for Every Market</h2>
+      </div>
+
+      <div class="product-grid">
+        <!-- Spices -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="/images/spices.png" alt="Spices" />
+            <div class="product-badge-icon">
+              <i class="fas fa-pepper-hot"></i>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-card-title">SPICES</h3>
+            <p class="product-card-desc">Red Chilli | Turmeric | Coriander</p>
+            <p class="product-card-subdesc">Teja Chilli | Crushed Chilli | Spice Blends</p>
+            <a href="#contact" class="product-link">View Spices <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Agricultural Commodities -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="/images/rice.png" alt="Agricultural Commodities" />
+            <div class="product-badge-icon">
+              <i class="fas fa-wheat-awn"></i>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-card-title">AGRICULTURAL COMMODITIES</h3>
+            <p class="product-card-desc">Rice | Broken Rice | Maize</p>
+            <p class="product-card-subdesc">Coriander Seeds | Other Products</p>
+            <a href="#contact" class="product-link">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Food Products -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="/images/coconut.png" alt="Food Products" />
+            <div class="product-badge-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-card-title">FOOD PRODUCTS</h3>
+            <p class="product-card-desc">Coconut Products | Khopra Bura</p>
+            <p class="product-card-subdesc">Khopra Lachha | Other Ingredients</p>
+            <a href="#contact" class="product-link">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Stone & Other Products -->
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Stone & Other Products" />
+            <div class="product-badge-icon">
+              <i class="fas fa-layer-group"></i>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <h3 class="product-card-title">STONE & OTHER PRODUCTS</h3>
+            <p class="product-card-desc">Kota Stone | Selected Indian Commodities</p>
+            <p class="product-card-subdesc">B2B Sourcing Products</p>
+            <a href="#contact" class="product-link">View Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY BUSINESS PARTNERS CHOOSE US ========== -->
+  <section class="why-section">
+    <div class="container">
+      <h2 class="why-title">Why Business Partners Choose Us</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon-red"><i class="fas fa-award"></i></div>
+          <h4>01. Quality Focus</h4>
+          <p>Consistent specifications and quality control.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon-red"><i class="fas fa-truck-fast"></i></div>
+          <h4>02. Reliable Supply</h4>
+          <p>Structured sourcing, processing & dispatch.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon-red"><i class="fas fa-box-open"></i></div>
+          <h4>03. Packaging Flexibility</h4>
+          <p>Bulk & retail packaging options available.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon-red"><i class="fas fa-tags"></i></div>
+          <h4>04. Private Label</h4>
+          <p>Custom branding & packaging solutions.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon-red"><i class="fas fa-earth-americas"></i></div>
+          <h4>05. Export Support</h4>
+          <p>Global markets & documentation assistance.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon-red"><i class="fas fa-handshake"></i></div>
+          <h4>06. Long-Term Business</h4>
+          <p>Transparent and reliable partnerships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4 SERVICE CARDS (Manufacturing, Private Label, Export, Quality) ========== -->
+  <section class="services-section" id="manufacturing">
+    <div class="container services-grid">
+      
+      <!-- Manufacturing & Processing — full image background card -->
+      <div class="service-card mfg-card">
+        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=700&q=80" alt="Manufacturing & Processing" class="sc-bg-img" />
+        <div class="sc-overlay"></div>
+        <div class="sc-inner">
+          <h3 class="sc-title">Manufacturing &amp;<br>Processing</h3>
+          <p class="sc-subtitle">From Sourcing to Supply</p>
+          <div class="sc-icons-row">
+            <div class="sc-icon-item">
+              <div class="sc-icon-circle"><i class="fas fa-seedling"></i></div>
+              <span>Sourcing</span>
+            </div>
+            <span class="sc-pipe">|</span>
+            <div class="sc-icon-item">
+              <div class="sc-icon-circle"><i class="fas fa-search"></i></div>
+              <span>Inspection</span>
+            </div>
+            <span class="sc-pipe">|</span>
+            <div class="sc-icon-item">
+              <div class="sc-icon-circle"><i class="fas fa-industry"></i></div>
+              <span>Processing</span>
+            </div>
+            <span class="sc-pipe">|</span>
+            <div class="sc-icon-item">
+              <div class="sc-icon-circle"><i class="fas fa-box"></i></div>
+              <span>Packing</span>
+            </div>
+            <span class="sc-pipe">|</span>
+            <div class="sc-icon-item">
+              <div class="sc-icon-circle"><i class="fas fa-clipboard-check"></i></div>
+              <span>QC</span>
+            </div>
+            <span class="sc-pipe">|</span>
+            <div class="sc-icon-item">
+              <div class="sc-icon-circle"><i class="fas fa-truck"></i></div>
+              <span>Dispatch</span>
+            </div>
+          </div>
+          <a href="#contact" class="sc-btn">Our Manufacturing <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Private Label — Exact vertical card image asset -->
+      <div class="service-card pl-card" id="privatelabel">
+        <a href="#contact" class="pl-card-link" aria-label="Discuss Your Project">
+          <img src="/images/private_label_card_perfect.png" alt="Private Label - Build Your Brand With Us" class="pl-exact-img" />
+        </a>
+      </div>
+
+      <!-- Export — full image background card -->
+      <div class="service-card export-card" id="export">
+        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=700&q=80" alt="Export Cargo Ship" class="sc-bg-img" />
+        <div class="sc-overlay"></div>
+        <div class="sc-inner">
+          <h3 class="sc-title">Export</h3>
+          <p class="sc-subtitle">Supplying Indian Products<br>to Global Markets</p>
+          <ul class="sc-checklist">
+            <li><i class="fas fa-check"></i> Spices &amp; Food Products</li>
+            <li><i class="fas fa-check"></i> Rice &amp; Agri Commodities</li>
+            <li><i class="fas fa-check"></i> Food Ingredients</li>
+            <li><i class="fas fa-check"></i> Indian Stone</li>
+            <li><i class="fas fa-check"></i> Private Label Products</li>
+          </ul>
+          <a href="#contact" class="sc-btn">Request Export Quotation <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Quality — full image background card -->
+      <div class="service-card quality-card" id="quality">
+        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=700&q=80" alt="Quality Testing" class="sc-bg-img" />
+        <div class="sc-overlay"></div>
+        <div class="sc-inner">
+          <h3 class="sc-title">Quality</h3>
+          <p class="sc-subtitle">Quality Is Built Into Every Shipment</p>
+          <div class="q-icons-wrap">
+            <div class="q-icons-row">
+              <div class="sc-icon-item">
+                <div class="sc-icon-circle"><i class="fas fa-file-alt"></i></div>
+                <span>Specification</span>
+              </div>
+              <span class="sc-pipe">|</span>
+              <div class="sc-icon-item">
+                <div class="sc-icon-circle"><i class="fas fa-flask"></i></div>
+                <span>Processing</span>
+              </div>
+              <span class="sc-pipe">|</span>
+              <div class="sc-icon-item">
+                <div class="sc-icon-circle"><i class="fas fa-microscope"></i></div>
+                <span>Lab Testing</span>
+              </div>
+              <span class="sc-pipe">|</span>
+              <div class="sc-icon-item">
+                <div class="sc-icon-circle"><i class="fas fa-certificate"></i></div>
+                <span>Certifications</span>
+              </div>
+            </div>
+            <div class="q-icons-row">
+              <div class="sc-icon-item">
+                <div class="sc-icon-circle"><i class="fas fa-box-open"></i></div>
+                <span>Packaging</span>
+              </div>
+              <span class="sc-pipe">|</span>
+              <div class="sc-icon-item">
+                <div class="sc-icon-circle"><i class="fas fa-search"></i></div>
+                <span>Inspection</span>
+              </div>
+              <span class="sc-pipe">|</span>
+              <div class="sc-icon-item">
+                <div class="sc-icon-circle"><i class="fas fa-shield-alt"></i></div>
+                <span>Quality Control</span>
+              </div>
+              <span class="sc-pipe">|</span>
+              <div class="sc-icon-item">
+                <div class="sc-icon-circle"><i class="fas fa-truck"></i></div>
+                <span>Dispatch</span>
+              </div>
+            </div>
+          </div>
+          <a href="#contact" class="sc-btn">Our Quality Process <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- ========== MARKETS + CONTACT FORM ========== -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-inner">
+      
+      <!-- Our Markets — Horizontal Flag Badges Card (Matching Image 1) -->
+      <div class="markets-card">
+        <div class="markets-map-bg"></div>
+        <div class="markets-content">
+          <h2 class="markets-title">Our Markets</h2>
+          <p class="markets-subtitle">Serving Domestic &amp; International Buyers</p>
+          
+          <div class="markets-row">
+            <!-- India Flag Circle -->
+            <div class="market-badge-item">
+              <div class="flag-circle">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="22" fill="#FFFFFF" stroke="rgba(255,255,255,0.9)" stroke-width="2.5"/>
+                  <g clip-path="url(#indiaClip)">
+                    <rect x="2" y="2" width="44" height="14.6" fill="#FF9933"/>
+                    <rect x="2" y="16.6" width="44" height="14.6" fill="#FFFFFF"/>
+                    <rect x="2" y="31.2" width="44" height="14.8" fill="#138808"/>
+                    <circle cx="24" cy="23.9" r="4.5" stroke="#000080" stroke-width="0.9" fill="none"/>
+                    <path d="M24 19.4 V28.4 M19.5 23.9 H28.5 M20.8 20.7 L27.2 27.1 M20.8 27.1 L27.2 20.7" stroke="#000080" stroke-width="0.6"/>
+                  </g>
+                  <defs>
+                    <clipPath id="indiaClip"><circle cx="24" cy="24" r="21.5"/></clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <span>India</span>
+            </div>
+
+            <!-- Middle East Flag Circle -->
+            <div class="market-badge-item">
+              <div class="flag-circle">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="22" fill="#FFFFFF" stroke="rgba(255,255,255,0.9)" stroke-width="2.5"/>
+                  <g clip-path="url(#meClip)">
+                    <rect x="2" y="2" width="44" height="14.6" fill="#007A3D"/>
+                    <rect x="2" y="16.6" width="44" height="14.6" fill="#FFFFFF"/>
+                    <rect x="2" y="31.2" width="44" height="14.8" fill="#000000"/>
+                    <path d="M2 2 L19 24 L2 46 Z" fill="#CE1126"/>
+                  </g>
+                  <defs>
+                    <clipPath id="meClip"><circle cx="24" cy="24" r="21.5"/></clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <span>Middle East</span>
+            </div>
+
+            <!-- Southeast Asia Flag Circle -->
+            <div class="market-badge-item">
+              <div class="flag-circle">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="22" fill="#FFFFFF" stroke="rgba(255,255,255,0.9)" stroke-width="2.5"/>
+                  <g clip-path="url(#seaClip)">
+                    <rect x="2" y="2" width="44" height="44" fill="#000066"/>
+                    <rect x="2" y="2" width="44" height="4" fill="#CC0000"/>
+                    <rect x="2" y="9" width="44" height="4" fill="#CC0000"/>
+                    <rect x="2" y="16" width="44" height="4" fill="#CC0000"/>
+                    <rect x="2" y="23" width="44" height="4" fill="#CC0000"/>
+                    <rect x="2" y="30" width="44" height="4" fill="#CC0000"/>
+                    <rect x="2" y="37" width="44" height="4" fill="#CC0000"/>
+                    <rect x="2" y="44" width="44" height="4" fill="#CC0000"/>
+                    <rect x="2" y="2" width="22" height="24" fill="#000066"/>
+                    <circle cx="11" cy="14" r="7" fill="#FFCC00"/>
+                    <circle cx="13" cy="14" r="6" fill="#000066"/>
+                  </g>
+                  <defs>
+                    <clipPath id="seaClip"><circle cx="24" cy="24" r="21.5"/></clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <span>Southeast Asia</span>
+            </div>
+
+            <!-- Africa Flag Circle -->
+            <div class="market-badge-item">
+              <div class="flag-circle">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="22" fill="#FFFFFF" stroke="rgba(255,255,255,0.9)" stroke-width="2.5"/>
+                  <g clip-path="url(#afClip)">
+                    <rect x="2" y="2" width="44" height="44" fill="#007A3D"/>
+                    <circle cx="24" cy="24" r="14" fill="#FFFFFF" opacity="0.95"/>
+                    <path d="M24 13 L28 17 L28 24 L31 29 L25 34 L21 30 L17 26 L19 18 Z" fill="#007A3D"/>
+                    <circle cx="24" cy="24" r="15" stroke="#FCD116" stroke-width="1.8" fill="none"/>
+                  </g>
+                  <defs>
+                    <clipPath id="afClip"><circle cx="24" cy="24" r="21.5"/></clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <span>Africa</span>
+            </div>
+          </div>
+
+          <p class="markets-note">We are continuously expanding our sourcing and supply network across domestic and international markets.</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="form-card">
+        <h2 class="form-title">Looking for a Reliable Supply Partner?</h2>
+        <p class="form-subtitle">Tell us what you need — we'll get back to you with the best solution.</p>
+        
+        <form class="enquiry-form" id="enquiryForm">
+          <div class="form-row">
+            <input type="text" placeholder="Name *" required id="formName" />
+            <input type="text" placeholder="Company Name *" required id="formCompany" />
+          </div>
+          <div class="form-row">
+            <select required id="formCountry">
+              <option value="" disabled selected>Country *</option>
+              <option value="India">India</option>
+              <option value="UAE">UAE</option>
+              <option value="Saudi Arabia">Saudi Arabia</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Other">Other</option>
+            </select>
+            <input type="text" placeholder="WhatsApp / Phone *" required id="formPhone" />
+          </div>
+          <div class="form-row">
+            <input type="text" placeholder="Product Required *" required id="formProduct" />
+            <input type="text" placeholder="Required Quantity *" id="formQty" />
+          </div>
+          <div class="form-row full">
+            <textarea placeholder="Messages" rows="3" id="formMessage"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit" id="formSubmit">
+            Send Enquiry <i class="fas fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Let's Grow Together -->
+      <div class="grow-card">
+        <img src="/images/spices.png" alt="Let's Grow Together Spices" class="grow-bg-img" />
+        <div class="grow-overlay">
+          <h3 class="grow-script-title">Let's Grow<br>Together</h3>
+          <i class="fas fa-leaf leaf-accent"></i>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      
+      <div class="footer-col brand-col">
+        <div class="footer-logo-row">
+          <img src="/Company logo.png" alt="Rajasthan Trading & Manufactures Logo" class="footer-logo-img" />
+          <div class="footer-brand-text">
+            <h3>RAJASTHAN TRADING &<br>MANUFACTURES</h3>
+            <p class="footer-tagline">INNOVATION, TRUST, QUALITY</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col contact-col">
+        <p><i class="fas fa-map-marker-alt"></i> Plot No. J126/A, RIICO Industrial Area,<br>Bhawani Mandi, Dist. Jhalawar,<br>Rajasthan – 326502, India</p>
+        <p><i class="fas fa-phone-alt"></i> +91 98293 77723</p>
+        <p><i class="fas fa-envelope"></i> rajasthanigold23@gmail.com</p>
+        <p><i class="fas fa-id-badge"></i> GSTIN: 08FWCPS1387D1ZB</p>
+        <p><i class="fas fa-globe"></i> rajasthanigoldspices.com</p>
+      </div>
+
+      <div class="footer-col links-col">
+        <h4>Quick Links</h4>
+        <div class="quick-links-grid">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#export">Export</a></li>
+          </ul>
+          <ul>
+            <li><a href="#privatelabel">Private Label</a></li>
+            <li><a href="#quality">Quality</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-col social-col">
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Rajasthan Trading & Manufactures. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky WhatsApp Button -->
+  <a href="https://wa.me/919829377723" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="/main.js" type="module"></script>
 </body>
 </html>
