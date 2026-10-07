@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 80" width="160" height="80">
+    <g transform="translate(15, 5)">
+      <!-- Green APEDA Leaf / Tree logo -->
+      <path d="M 30 62 C 10 50 12 25 35 15 C 38 30 25 45 35 62 Z" fill="#00833e"/>
+      <path d="M 35 15 C 55 18 52 40 35 62 C 45 42 58 32 35 15 Z" fill="#00833e"/>
+      <!-- Trunk line -->
+      <path d="M 34 62 L 34 68" stroke="#00833e" stroke-width="4" stroke-linecap="round"/>
+      <!-- Hindi APEDA text -->
+      <text x="85" y="36" font-family="sans-serif" font-weight="bold" font-size="16" fill="#00833e">एपीडा</text>
+      <!-- English APEDA text -->
+      <text x="85" y="54" font-family="'Arial Black', sans-serif" font-weight="900" font-size="14" fill="#00833e">APEDA</text>
+    </g>
+  </svg>

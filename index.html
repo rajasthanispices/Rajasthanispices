@@ -51,7 +51,7 @@
       </nav>
 
       <div class="header-actions">
-        <a href="/contact.html" class="btn-quote">Contact Us</a>
+        <button class="btn-quote" data-open-modal="true" data-product="General Business Enquiry">Contact Us</button>
       </div>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
@@ -364,6 +364,59 @@
 
 
 
+  <!-- ========== CERTIFICATES SLOW-MOTION MARQUEE SECTION ========== -->
+  <section class="certificates-section">
+    <div class="container">
+      <div class="certificates-marquee-wrapper">
+        <div class="certificates-marquee-label">
+          <i class="fas fa-certificate"></i> Accredited Certifications & Global Standards
+        </div>
+        <div class="certificates-marquee">
+          <div class="marquee-track">
+            <!-- Group 1 -->
+            <div class="marquee-group">
+              <div class="cert-item" title="FSSAI Certified"><img src="Certificates/fssai.svg" alt="FSSAI" /></div>
+              <div class="cert-item" title="ISO 22000"><img src="Certificates/iso.svg" alt="ISO" /></div>
+              <div class="cert-item" title="APEDA Registered"><img src="Certificates/apeda.svg" alt="APEDA" /></div>
+              <div class="cert-item" title="Spices Board India"><img src="Certificates/spices_board.svg" alt="Spices Board" /></div>
+              <div class="cert-item" title="Halal Certified"><img src="Certificates/halal.webp" alt="Halal" /></div>
+              <div class="cert-item" title="AGMARK Grade"><img src="Certificates/agmark.svg" alt="AGMARK" /></div>
+              <div class="cert-item" title="GST Registered"><img src="Certificates/gst.svg" alt="GST" /></div>
+              <div class="cert-item" title="DGFT Licensed"><img src="Certificates/dgft.webp" alt="DGFT" /></div>
+              <div class="cert-item" title="FDA Registered"><img src="Certificates/fda.webp" alt="FDA" /></div>
+              <div class="cert-item" title="FICCI Member"><img src="Certificates/ficci.webp" alt="FICCI" /></div>
+              <div class="cert-item" title="FIEO Certified"><img src="Certificates/fieo.webp" alt="FIEO" /></div>
+              <div class="cert-item" title="GCCI Member"><img src="Certificates/gcci.webp" alt="GCCI" /></div>
+              <div class="cert-item" title="GMP Certified"><img src="Certificates/gmp.webp" alt="GMP" /></div>
+              <div class="cert-item" title="MSME Registered"><img src="Certificates/msme.webp" alt="MSME" /></div>
+              <div class="cert-item" title="Spices Export License"><img src="Certificates/spice.webp" alt="Spice" /></div>
+              <div class="cert-item" title="Udyog Aadhaar"><img src="Certificates/udyogaadhaar.webp" alt="Udyog Aadhaar" /></div>
+            </div>
+            <!-- Group 2 (Duplicate for Continuous Loop) -->
+            <div class="marquee-group" aria-hidden="true">
+              <div class="cert-item" title="FSSAI Certified"><img src="Certificates/fssai.svg" alt="FSSAI" /></div>
+              <div class="cert-item" title="ISO 22000"><img src="Certificates/iso.svg" alt="ISO" /></div>
+              <div class="cert-item" title="APEDA Registered"><img src="Certificates/apeda.svg" alt="APEDA" /></div>
+              <div class="cert-item" title="Spices Board India"><img src="Certificates/spices_board.svg" alt="Spices Board" /></div>
+              <div class="cert-item" title="Halal Certified"><img src="Certificates/halal.webp" alt="Halal" /></div>
+              <div class="cert-item" title="AGMARK Grade"><img src="Certificates/agmark.svg" alt="AGMARK" /></div>
+              <div class="cert-item" title="GST Registered"><img src="Certificates/gst.svg" alt="GST" /></div>
+              <div class="cert-item" title="DGFT Licensed"><img src="Certificates/dgft.webp" alt="DGFT" /></div>
+              <div class="cert-item" title="FDA Registered"><img src="Certificates/fda.webp" alt="FDA" /></div>
+              <div class="cert-item" title="FICCI Member"><img src="Certificates/ficci.webp" alt="FICCI" /></div>
+              <div class="cert-item" title="FIEO Certified"><img src="Certificates/fieo.webp" alt="FIEO" /></div>
+              <div class="cert-item" title="GCCI Member"><img src="Certificates/gcci.webp" alt="GCCI" /></div>
+              <div class="cert-item" title="GMP Certified"><img src="Certificates/gmp.webp" alt="GMP" /></div>
+              <div class="cert-item" title="MSME Registered"><img src="Certificates/msme.webp" alt="MSME" /></div>
+              <div class="cert-item" title="Spices Export License"><img src="Certificates/spice.webp" alt="Spice" /></div>
+              <div class="cert-item" title="Udyog Aadhaar"><img src="Certificates/udyogaadhaar.webp" alt="Udyog Aadhaar" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== MARKETS + CONTACT FORM ========== -->
   <section class="contact-section" id="contact">
     <div class="container contact-inner">
@@ -573,6 +626,45 @@
   <a href="https://wa.me/919829377723" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
+
+  <!-- Modal Enquiry Popup -->
+  <div class="modal-overlay" id="enquiryModal">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h3><i class="fas fa-paper-plane" style="color: var(--red-accent, #c53030); margin-right: 8px;"></i> Send Business Enquiry</h3>
+        <p>Connect directly with our sales &amp; export desk for instant quotes.</p>
+      </div>
+      <form class="enquiry-form" id="modalEnquiryForm">
+        <div class="form-row">
+          <input type="text" id="modalFormName" name="name" required placeholder="Name *" />
+          <input type="text" id="modalFormCompany" name="company" required placeholder="Company Name *" />
+        </div>
+        <div class="form-row">
+          <select required id="modalFormCountry" name="country">
+            <option value="" disabled selected>Country *</option>
+            <option value="India">India</option>
+            <option value="UAE">UAE</option>
+            <option value="Saudi Arabia">Saudi Arabia</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="text" id="modalFormPhone" name="phone" required placeholder="WhatsApp / Phone *" />
+        </div>
+        <div class="form-row">
+          <input type="text" id="modalFormProduct" name="product" required placeholder="Product Required *" />
+          <input type="text" id="modalFormQty" name="quantity" placeholder="Required Quantity *" />
+        </div>
+        <div class="form-row full">
+          <textarea id="modalFormMessage" name="message" rows="3" placeholder="Messages"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-submit" style="width: 100%; justify-content: center; font-size: 0.95rem;">
+          Send Enquiry <i class="fas fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
 
   <script src="/main.js" type="module"></script>
 </body>

@@ -51,7 +51,7 @@
       </nav>
 
       <div class="header-actions">
-        <a href="/contact.html" class="btn-quote">Contact Us</a>
+        <button class="btn-quote" data-open-modal="true" data-product="General Business Enquiry">Contact Us</button>
       </div>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
@@ -316,6 +316,45 @@
   <a href="https://wa.me/919829377723" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
+
+  <!-- Modal Enquiry Popup -->
+  <div class="modal-overlay" id="enquiryModal">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h3><i class="fas fa-paper-plane" style="color: var(--red-accent, #c53030); margin-right: 8px;"></i> Send Business Enquiry</h3>
+        <p>Connect directly with our sales &amp; export desk for instant quotes.</p>
+      </div>
+      <form class="enquiry-form" id="modalEnquiryForm">
+        <div class="form-row">
+          <input type="text" id="modalFormName" name="name" required placeholder="Name *" />
+          <input type="text" id="modalFormCompany" name="company" required placeholder="Company Name *" />
+        </div>
+        <div class="form-row">
+          <select required id="modalFormCountry" name="country">
+            <option value="" disabled selected>Country *</option>
+            <option value="India">India</option>
+            <option value="UAE">UAE</option>
+            <option value="Saudi Arabia">Saudi Arabia</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="text" id="modalFormPhone" name="phone" required placeholder="WhatsApp / Phone *" />
+        </div>
+        <div class="form-row">
+          <input type="text" id="modalFormProduct" name="product" required placeholder="Product Required *" />
+          <input type="text" id="modalFormQty" name="quantity" placeholder="Required Quantity *" />
+        </div>
+        <div class="form-row full">
+          <textarea id="modalFormMessage" name="message" rows="3" placeholder="Messages"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-submit" style="width: 100%; justify-content: center; font-size: 0.95rem;">
+          Send Enquiry <i class="fas fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
 
   <script src="main.js" type="module"></script>
 </body>

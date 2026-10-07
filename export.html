@@ -3,13 +3,496 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Export Markets &amp; Global Trade Desk | Rajasthan Trading &amp; Manufactures</title>
-  <meta name="description" content="Global export partner for Indian spices, ground powders, seeds &amp; agro commodities. Exporting to GCC, SE Asia, Africa &amp; Western markets with full compliance." />
+  <title>Export Markets & Global Trade Desk | Rajasthan Trading & Manufactures</title>
+  <meta name="description" content="Global export partner for Indian spices, ground powders, seeds & agro commodities. Exporting to GCC, SE Asia, Africa & Western markets with full compliance." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== EXPORT PAGE SPECIFIC STYLES ===== */
+
+    /* Hero */
+    .exp-hero-section {
+      width: 100%;
+      line-height: 0;
+    }
+    .exp-hero-section img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Stats Bar */
+    .exp-stats-bar {
+      background: #ffffff;
+      padding: 36px 0;
+      border-bottom: 1px solid #e5e0d5;
+    }
+    .exp-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .exp-stat-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 32px;
+      border-right: 1px solid #e5e0d5;
+    }
+    .exp-stat-item:last-child { border-right: none; }
+    .exp-stat-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: rgba(6, 79, 61, 0.1);
+      color: #064f3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .exp-stat-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #14201c;
+      margin: 0 0 2px 0;
+      line-height: 1.1;
+    }
+    .exp-stat-sub {
+      font-size: 0.82rem;
+      color: #68716d;
+      margin: 0;
+      line-height: 1.35;
+    }
+
+    /* Section: Destinations */
+    .exp-sec-dest {
+      padding: 80px 0;
+      background: #f8f5ed;
+    }
+    .exp-sec-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #064f3d;
+      margin-bottom: 10px;
+    }
+    .exp-sec-label span {
+      display: inline-block;
+      width: 32px;
+      height: 2px;
+      background: #064f3d;
+    }
+    .exp-sec-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: #14201c;
+      margin: 0 0 12px 0;
+      line-height: 1.15;
+    }
+    .exp-sec-sub {
+      font-size: 0.95rem;
+      color: #68716d;
+      margin: 0 0 50px 0;
+    }
+
+    /* Country Cards */
+    .exp-country-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .exp-country-grid-row2 {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+    .exp-country-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e5e0d5;
+      box-shadow: 0 4px 16px rgba(20,32,28,0.06);
+      transition: all 0.3s ease;
+    }
+    .exp-country-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(6, 79, 61, 0.14);
+      border-color: #064f3d;
+    }
+    .exp-country-img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+    .exp-country-body {
+      padding: 14px 14px 16px;
+    }
+    .exp-country-flag-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .exp-country-flag {
+      width: 32px;
+      height: 22px;
+      object-fit: cover;
+      border-radius: 3px;
+      border: 1px solid #e5e0d5;
+    }
+    .exp-country-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #14201c;
+      margin: 0;
+    }
+    .exp-country-info {
+      font-size: 0.78rem;
+      color: #68716d;
+      margin: 4px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+      line-height: 1.35;
+    }
+    .exp-country-info i {
+      color: #064f3d;
+      margin-top: 2px;
+      flex-shrink: 0;
+      font-size: 0.72rem;
+    }
+    .exp-country-transit {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #064f3d;
+      background: rgba(6, 79, 61, 0.08);
+      padding: 3px 8px;
+      border-radius: 20px;
+      margin-top: 6px;
+    }
+
+    /* Container Section — Matches Image 1 */
+    /* Container Section — Matches Image 1 */
+    .exp-sec-container {
+      position: relative;
+      padding: 90px 0;
+      background: url('/images/ref_export/container_section_bg.jpg') center/cover no-repeat;
+      border-bottom: 4px solid #064f3d;
+    }
+    .exp-sec-container::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.88) 45%, rgba(255, 255, 255, 0.55) 100%);
+      pointer-events: none;
+    }
+    .exp-sec-container .container {
+      position: relative;
+      z-index: 2;
+    }
+    .exp-container-layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .exp-container-left {
+      padding-right: 10px;
+    }
+    .exp-container-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .exp-card-container-spec {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+      border: 1px solid #e2ded4;
+    }
+    .exp-spec-header-banner {
+      background: #064f3d;
+      color: #ffffff;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .exp-spec-header-icon {
+      font-size: 2.2rem;
+      color: #ffffff;
+      opacity: 0.9;
+    }
+    .exp-spec-header-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin: 0;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+    .exp-spec-header-sub {
+      font-size: 0.8rem;
+      opacity: 0.85;
+      font-weight: 500;
+      margin: 2px 0 0 0;
+    }
+    .exp-spec-img {
+      width: 100%;
+      height: 165px;
+      object-fit: cover;
+      display: block;
+    }
+    .exp-spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+    }
+    .exp-spec-table thead th {
+      background: #064f3d;
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: capitalize;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .exp-spec-table thead th:last-child {
+      text-align: center;
+    }
+    .exp-spec-table tbody tr {
+      border-bottom: 1px solid #ebe7df;
+    }
+    .exp-spec-table tbody tr:nth-child(even) {
+      background: #fcfbfa;
+    }
+    .exp-spec-table tbody tr:last-child {
+      border-bottom: none;
+    }
+    .exp-spec-table td {
+      padding: 10px 14px;
+      color: #333d38;
+      vertical-align: middle;
+    }
+    .exp-prod-cell {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: #14201c;
+    }
+    .exp-prod-thumb {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .exp-cap-cell {
+      text-align: center;
+      font-weight: 900;
+      color: #14201c;
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+
+    /* Documentation Section — Distinct Dark Theme to completely separate from Section 1 */
+    .exp-sec-docs {
+      position: relative;
+      padding: 90px 0;
+      background: #14201c;
+      color: #ffffff;
+    }
+    .exp-sec-docs .container {
+      position: relative;
+      z-index: 2;
+    }
+    .exp-docs-grid-v2 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 45px;
+    }
+    .exp-doc-card-v2 {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px 20px 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e5e0d5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    .exp-doc-card-v2:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(6, 79, 61, 0.15);
+      border-color: #064f3d;
+    }
+    .exp-doc-top-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .exp-doc-top-icon {
+      color: #064f3d;
+      font-size: 2.2rem;
+      flex-shrink: 0;
+    }
+    .exp-doc-card-h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #14201c;
+      margin: 0;
+      line-height: 1.25;
+    }
+    .exp-doc-card-sub {
+      font-size: 0.82rem;
+      color: #5d6762;
+      line-height: 1.45;
+      margin: 0 0 16px 0;
+    }
+    .exp-doc-card-img {
+      width: 100%;
+      height: 155px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      border: 1px solid #eee9df;
+    }
+
+    /* CTA Section */
+    .exp-sec-cta {
+      position: relative;
+      padding: 80px 0;
+      overflow: hidden;
+    }
+    .exp-cta-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('/images/ref_export/cta_cargo.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .exp-cta-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(6,38,21,0.92) 0%, rgba(10,50,35,0.88) 100%);
+    }
+    .exp-cta-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .exp-cta-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #f5c842;
+      margin-bottom: 10px;
+    }
+    .exp-cta-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin: 0 0 14px 0;
+      line-height: 1.2;
+    }
+    .exp-cta-desc {
+      font-size: 0.95rem;
+      color: #c8dbd4;
+      margin: 0;
+      max-width: 520px;
+      line-height: 1.6;
+    }
+    .exp-cta-btns {
+      display: flex;
+      gap: 14px;
+      flex-shrink: 0;
+      flex-direction: column;
+    }
+    .btn-exp-quote {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: #f5c842;
+      color: #14201c;
+      font-size: 0.92rem;
+      font-weight: 800;
+      border-radius: 10px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .btn-exp-quote:hover {
+      background: #e6b830;
+      transform: translateY(-2px);
+    }
+    .btn-exp-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: transparent;
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 700;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .btn-exp-wa:hover {
+      border-color: #25D366;
+      background: rgba(37, 211, 102, 0.1);
+    }
+    .btn-exp-wa .wa-icon { color: #25D366; font-size: 1.1rem; }
+
+    @media (max-width: 1100px) {
+      .exp-country-grid, .exp-country-grid-row2 { grid-template-columns: repeat(3, 1fr); }
+      .exp-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .exp-stat-item { border-right: none; border-bottom: 1px solid #e5e0d5; padding: 16px 20px; }
+      .exp-container-layout { grid-template-columns: 1fr; }
+      .exp-docs-grid, .exp-docs-grid-v2 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .exp-country-grid, .exp-country-grid-row2 { grid-template-columns: repeat(2, 1fr); }
+      .exp-stats-grid { grid-template-columns: 1fr; }
+      .exp-sec-h2 { font-size: 1.9rem; }
+      .exp-docs-grid, .exp-docs-grid-v2 { grid-template-columns: 1fr; }
+      .exp-container-cards-grid { grid-template-columns: 1fr; }
+      .exp-cta-content { flex-direction: column; }
+      .exp-cta-btns { flex-direction: row; flex-wrap: wrap; }
+    }
+  </style>
 </head>
 <body>
 
@@ -31,10 +514,10 @@
   <header class="header" id="header">
     <div class="header-inner">
       <a href="/index.html" class="logo-area">
-        <img src="/Company logo.png" alt="Rajasthan Trading &amp; Manufactures Logo" class="header-logo-img" />
+        <img src="Company logo.png" alt="Rajasthan Trading & Manufactures Logo" class="header-logo-img" />
         <div class="logo-text">
           <h1 class="logo-title">
-            <span class="logo-green">RAJASTHAN TRADING &amp;</span><br>
+            <span class="logo-green">RAJASTHAN TRADING &</span><br>
             <span class="logo-red">MANUFACTURES</span>
           </h1>
           <p class="logo-tagline">INNOVATION, TRUST, QUALITY</p>
@@ -51,7 +534,7 @@
       </nav>
 
       <div class="header-actions">
-        <a href="/contact.html" class="btn-quote">Contact Us</a>
+        <button class="btn-quote" data-open-modal="true" data-product="General Business Enquiry">Contact Us</button>
       </div>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
@@ -60,59 +543,45 @@
     </div>
   </header>
 
-  <!-- ========== VISUAL HERO BANNER ========== -->
-  <section class="subpage-hero" style="background-image: url('/images/hero_export_shipping_port.png'); min-height: 320px; display: flex; align-items: center; padding: 60px 0 50px 0;">
-    <div class="container">
-      <div style="max-width: 800px; margin: 0 auto; text-align: center; background: rgba(6, 38, 21, 0.78); backdrop-filter: blur(8px); padding: 32px 28px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.35);">
-        <span class="subpage-hero-badge" style="background: rgba(250, 204, 21, 0.25); border-color: #facc15;"><i class="fas fa-globe-asia"></i> GLOBAL SPICE EXPORT DESK</span>
-        <h1 class="subpage-hero-title" style="font-size: 2.7rem; font-weight: 900; line-height: 1.15; margin: 10px 0 8px 0;">Quality From India. Trust For The World.</h1>
-        <p class="subpage-hero-subtitle" style="font-size: 1rem; color: #f1f5f9; margin-bottom: 0;">Delivering premium export-grade Red Chilli, Turmeric, Coriander, Cumin &amp; Agro Commodities worldwide.</p>
-      </div>
-    </div>
+  <!-- ========== 1. HERO BANNER ========== -->
+  <section class="exp-hero-section">
+    <img src="/images/ref_export/hero_export_hd.png" alt="Quality From India. Trust For The World. — RTM Global Spice Export" />
   </section>
 
-  <!-- ========== EXPORT CAPABILITIES METRICS ========== -->
-  <section style="padding: 60px 0; background: #ffffff;">
+  <!-- ========== 2. STATS BAR ========== -->
+  <section class="exp-stats-bar">
     <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
-        
-        <div style="background: #f8fafc; border-radius: 16px; padding: 24px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 16px;">
-          <div style="width: 54px; height: 54px; border-radius: 12px; background: rgba(22, 101, 52, 0.1); color: #166534; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
-            <i class="fas fa-ship"></i>
-          </div>
+      <div class="exp-stats-grid">
+
+        <div class="exp-stat-item">
+          <div class="exp-stat-icon"><i class="fas fa-ship"></i></div>
           <div>
-            <h3 style="font-size: 1.6rem; font-weight: 900; color: #0f172a; margin: 0;">15+ Countries</h3>
-            <p style="font-size: 0.85rem; color: #64748b; margin: 0;">GCC, SE Asia, Africa &amp; Americas</p>
+            <p class="exp-stat-title">15+ Countries</p>
+            <p class="exp-stat-sub">GCC, SE Asia, Africa<br>&amp; Americas</p>
           </div>
         </div>
 
-        <div style="background: #f8fafc; border-radius: 16px; padding: 24px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 16px;">
-          <div style="width: 54px; height: 54px; border-radius: 12px; background: rgba(22, 101, 52, 0.1); color: #166534; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
-            <i class="fas fa-boxes-packing"></i>
-          </div>
+        <div class="exp-stat-item">
+          <div class="exp-stat-icon"><i class="fas fa-boxes-packing"></i></div>
           <div>
-            <h3 style="font-size: 1.6rem; font-weight: 900; color: #0f172a; margin: 0;">FCL &amp; LCL Freight</h3>
-            <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Container loads from 1 MT to 500+ MT</p>
+            <p class="exp-stat-title">FCL &amp; LCL Freight</p>
+            <p class="exp-stat-sub">Container loads from<br>1 MT to 500+ MT</p>
           </div>
         </div>
 
-        <div style="background: #f8fafc; border-radius: 16px; padding: 24px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 16px;">
-          <div style="width: 54px; height: 54px; border-radius: 12px; background: rgba(22, 101, 52, 0.1); color: #166534; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
-            <i class="fas fa-certificate"></i>
-          </div>
+        <div class="exp-stat-item">
+          <div class="exp-stat-icon"><i class="fas fa-certificate"></i></div>
           <div>
-            <h3 style="font-size: 1.6rem; font-weight: 900; color: #0f172a; margin: 0;">100% Certified</h3>
-            <p style="font-size: 0.85rem; color: #64748b; margin: 0;">APEDA, Spices Board, Phyto &amp; Halal</p>
+            <p class="exp-stat-title">100% Certified</p>
+            <p class="exp-stat-sub">APEDA, Spices Board,<br>Phyto &amp; Halal</p>
           </div>
         </div>
 
-        <div style="background: #f8fafc; border-radius: 16px; padding: 24px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 16px;">
-          <div style="width: 54px; height: 54px; border-radius: 12px; background: rgba(22, 101, 52, 0.1); color: #166534; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
-            <i class="fas fa-handshake"></i>
-          </div>
+        <div class="exp-stat-item">
+          <div class="exp-stat-icon"><i class="fas fa-handshake"></i></div>
           <div>
-            <h3 style="font-size: 1.6rem; font-weight: 900; color: #0f172a; margin: 0;">FOB &amp; CIF Terms</h3>
-            <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Flexible shipping &amp; LC payment terms</p>
+            <p class="exp-stat-title">FOB &amp; CIF Terms</p>
+            <p class="exp-stat-sub">Flexible shipping &amp;<br>LC payment terms</p>
           </div>
         </div>
 
@@ -120,312 +589,377 @@
     </div>
   </section>
 
-  <!-- ========== PRIMARY EXPORT DESTINATIONS WITH ORIGINAL FLAGS ========== -->
-  <section style="padding: 80px 0; background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+  <!-- ========== 3. GLOBAL EXPORT DESTINATIONS ========== -->
+  <section class="exp-sec-dest">
     <div class="container">
-      <div style="text-align: center; max-width: 750px; margin: 0 auto 50px auto;">
-        <span style="color: #166534; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; font-size: 0.85rem;">TARGET EXPORT MARKETS</span>
-        <h2 style="font-size: 2.3rem; font-weight: 900; color: #0f172a; margin-top: 6px;">Global Export Destinations</h2>
-        <p style="color: #64748b; font-size: 0.98rem;">Supplying high-grade Indian spices and commodities to key international maritime ports.</p>
+      <div class="exp-sec-label"><span></span> TARGET EXPORT MARKETS <span></span></div>
+      <h2 class="exp-sec-h2">Global Export Destinations</h2>
+      <p class="exp-sec-sub">Supplying high-grade Indian spices and commodities to key international maritime ports.</p>
+
+      <!-- Row 1: UAE, Saudi, Malaysia, Vietnam, Oman -->
+      <div class="exp-country-grid">
+
+        <div class="exp-country-card">
+          <img src="/images/ref_export/country_uae.jpg" alt="United Arab Emirates - Dubai" class="exp-country-img" />
+          <div class="exp-country-body">
+            <div class="exp-country-flag-row">
+              <img src="https://flagcdn.com/w40/ae.png" alt="UAE" class="exp-country-flag" />
+              <p class="exp-country-name">United Arab Emirates</p>
+            </div>
+            <p class="exp-country-info"><i class="fas fa-anchor"></i> Jebel Ali / Dubai Port</p>
+            <p class="exp-country-info"><i class="fas fa-seedling"></i> Teja S17 Chilli, Turmeric, Coriander</p>
+            <span class="exp-country-transit"><i class="fas fa-clock"></i> 4–6 Days (Direct Vessel)</span>
+          </div>
+        </div>
+
+        <div class="exp-country-card">
+          <img src="/images/ref_export/country_saudi.jpg" alt="Saudi Arabia - Riyadh" class="exp-country-img" />
+          <div class="exp-country-body">
+            <div class="exp-country-flag-row">
+              <img src="https://flagcdn.com/w40/sa.png" alt="Saudi Arabia" class="exp-country-flag" />
+              <p class="exp-country-name">Saudi Arabia</p>
+            </div>
+            <p class="exp-country-info"><i class="fas fa-anchor"></i> Jeddah Islamic Port / Dammam</p>
+            <p class="exp-country-info"><i class="fas fa-seedling"></i> Red Chilli Powder, Cumin, Turmeric</p>
+            <span class="exp-country-transit"><i class="fas fa-clock"></i> 7–9 Days</span>
+          </div>
+        </div>
+
+        <div class="exp-country-card">
+          <img src="/images/ref_export/country_malaysia.jpg" alt="Malaysia - Kuala Lumpur" class="exp-country-img" />
+          <div class="exp-country-body">
+            <div class="exp-country-flag-row">
+              <img src="https://flagcdn.com/w40/my.png" alt="Malaysia" class="exp-country-flag" />
+              <p class="exp-country-name">Malaysia</p>
+            </div>
+            <p class="exp-country-info"><i class="fas fa-anchor"></i> Port Klang / Penang</p>
+            <p class="exp-country-info"><i class="fas fa-seedling"></i> Stemless Red Chilli, Mustard, Coriander</p>
+            <span class="exp-country-transit"><i class="fas fa-clock"></i> 8–10 Days</span>
+          </div>
+        </div>
+
+        <div class="exp-country-card">
+          <img src="/images/ref_export/country_vietnam.jpg" alt="Vietnam - Ho Chi Minh City" class="exp-country-img" />
+          <div class="exp-country-body">
+            <div class="exp-country-flag-row">
+              <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam" class="exp-country-flag" />
+              <p class="exp-country-name">Vietnam</p>
+            </div>
+            <p class="exp-country-info"><i class="fas fa-anchor"></i> Haiphong / Ho Chi Minh</p>
+            <p class="exp-country-info"><i class="fas fa-seedling"></i> Whole Turmeric Fingers, Raw Spices</p>
+            <span class="exp-country-transit"><i class="fas fa-clock"></i> 10–12 Days</span>
+          </div>
+        </div>
+
+        <div class="exp-country-card">
+          <img src="/images/ref_export/country_oman.jpg" alt="Oman - Muscat" class="exp-country-img" />
+          <div class="exp-country-body">
+            <div class="exp-country-flag-row">
+              <img src="https://flagcdn.com/w40/om.png" alt="Oman" class="exp-country-flag" />
+              <p class="exp-country-name">Oman</p>
+            </div>
+            <p class="exp-country-info"><i class="fas fa-anchor"></i> Sohar Port / Muscat</p>
+            <p class="exp-country-info"><i class="fas fa-seedling"></i> Ground Spice Powders, Rice &amp; Grains</p>
+            <span class="exp-country-transit"><i class="fas fa-clock"></i> 4–6 Days</span>
+          </div>
+        </div>
+
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 24px;">
+      <!-- Row 2: Qatar, Kuwait, South Africa, Singapore + filler -->
+      <div class="exp-country-grid-row2" style="margin-top: 20px;">
 
-        <!-- UAE -->
-        <div class="country-card-flagship">
-          <div class="country-card-header">
-            <img src="https://flagcdn.com/w80/ae.png" alt="UAE Flag" class="flag-img-lg" />
-            <div>
-              <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0;">United Arab Emirates</h3>
-              <span style="font-size: 0.78rem; color: #166534; font-weight: 700;">Jebel Ali / Dubai Port</span>
+        <div class="exp-country-card">
+          <img src="/images/ref_export/country_qatar.jpg" alt="Qatar - Doha" class="exp-country-img" />
+          <div class="exp-country-body">
+            <div class="exp-country-flag-row">
+              <img src="https://flagcdn.com/w40/qa.png" alt="Qatar" class="exp-country-flag" />
+              <p class="exp-country-name">Qatar</p>
             </div>
-          </div>
-          <div style="margin-top: 12px; font-size: 0.85rem; color: #475569;">
-            <p style="margin-bottom: 6px;"><strong style="color: #0f172a;">Key Products:</strong> Teja S17 Chilli, Turmeric Powder, Coriander Seeds</p>
-            <p style="margin: 0;"><strong style="color: #0f172a;">Transit Time:</strong> 4 - 6 Days (Direct Vessel)</p>
+            <p class="exp-country-info"><i class="fas fa-anchor"></i> Hamad Port / Doha</p>
+            <p class="exp-country-info"><i class="fas fa-seedling"></i> Premium Turmeric, Red Chilli Powder</p>
+            <span class="exp-country-transit"><i class="fas fa-clock"></i> 6–8 Days</span>
           </div>
         </div>
 
-        <!-- Saudi Arabia -->
-        <div class="country-card-flagship">
-          <div class="country-card-header">
-            <img src="https://flagcdn.com/w80/sa.png" alt="Saudi Arabia Flag" class="flag-img-lg" />
-            <div>
-              <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0;">Saudi Arabia</h3>
-              <span style="font-size: 0.78rem; color: #166534; font-weight: 700;">Jeddah Islamic Port / Dammam</span>
+        <div class="exp-country-card">
+          <img src="/images/ref_export/country_kuwait.jpg" alt="Kuwait City" class="exp-country-img" />
+          <div class="exp-country-body">
+            <div class="exp-country-flag-row">
+              <img src="https://flagcdn.com/w40/kw.png" alt="Kuwait" class="exp-country-flag" />
+              <p class="exp-country-name">Kuwait</p>
             </div>
-          </div>
-          <div style="margin-top: 12px; font-size: 0.85rem; color: #475569;">
-            <p style="margin-bottom: 6px;"><strong style="color: #0f172a;">Key Products:</strong> Red Chilli Powder, Cumin Seeds, Turmeric</p>
-            <p style="margin: 0;"><strong style="color: #0f172a;">Transit Time:</strong> 7 - 9 Days</p>
+            <p class="exp-country-info"><i class="fas fa-anchor"></i> Shuwaikh Port</p>
+            <p class="exp-country-info"><i class="fas fa-seedling"></i> Coriander Powder, Fenugreek, Oilseeds</p>
+            <span class="exp-country-transit"><i class="fas fa-clock"></i> 7–9 Days</span>
           </div>
         </div>
 
-        <!-- Malaysia -->
-        <div class="country-card-flagship">
-          <div class="country-card-header">
-            <img src="https://flagcdn.com/w80/my.png" alt="Malaysia Flag" class="flag-img-lg" />
-            <div>
-              <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0;">Malaysia</h3>
-              <span style="font-size: 0.78rem; color: #166534; font-weight: 700;">Port Klang / Penang</span>
+        <div class="exp-country-card">
+          <img src="/images/ref_export/country_southafrica.jpg" alt="South Africa - Cape Town" class="exp-country-img" />
+          <div class="exp-country-body">
+            <div class="exp-country-flag-row">
+              <img src="https://flagcdn.com/w40/za.png" alt="South Africa" class="exp-country-flag" />
+              <p class="exp-country-name">South Africa</p>
             </div>
-          </div>
-          <div style="margin-top: 12px; font-size: 0.85rem; color: #475569;">
-            <p style="margin-bottom: 6px;"><strong style="color: #0f172a;">Key Products:</strong> Stemless Red Chilli, Mustard Seeds, Coriander</p>
-            <p style="margin: 0;"><strong style="color: #0f172a;">Transit Time:</strong> 8 - 10 Days</p>
+            <p class="exp-country-info"><i class="fas fa-anchor"></i> Durban Port</p>
+            <p class="exp-country-info"><i class="fas fa-seedling"></i> Whole Red Chilli, Turmeric Powder</p>
+            <span class="exp-country-transit"><i class="fas fa-clock"></i> 14–18 Days</span>
           </div>
         </div>
 
-        <!-- Vietnam -->
-        <div class="country-card-flagship">
-          <div class="country-card-header">
-            <img src="https://flagcdn.com/w80/vn.png" alt="Vietnam Flag" class="flag-img-lg" />
-            <div>
-              <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0;">Vietnam</h3>
-              <span style="font-size: 0.78rem; color: #166534; font-weight: 700;">Haiphong / Ho Chi Minh</span>
+        <div class="exp-country-card">
+          <img src="/images/ref_export/country_singapore.jpg" alt="Singapore Port" class="exp-country-img" />
+          <div class="exp-country-body">
+            <div class="exp-country-flag-row">
+              <img src="https://flagcdn.com/w40/sg.png" alt="Singapore" class="exp-country-flag" />
+              <p class="exp-country-name">Singapore</p>
             </div>
-          </div>
-          <div style="margin-top: 12px; font-size: 0.85rem; color: #475569;">
-            <p style="margin-bottom: 6px;"><strong style="color: #0f172a;">Key Products:</strong> Whole Turmeric Fingers, Raw Spices</p>
-            <p style="margin: 0;"><strong style="color: #0f172a;">Transit Time:</strong> 10 - 12 Days</p>
+            <p class="exp-country-info"><i class="fas fa-anchor"></i> PSA Port Singapore</p>
+            <p class="exp-country-info"><i class="fas fa-seedling"></i> High Curcumin Turmeric, Sortex Spices</p>
+            <span class="exp-country-transit"><i class="fas fa-clock"></i> 7–9 Days</span>
           </div>
         </div>
 
-        <!-- Oman -->
-        <div class="country-card-flagship">
-          <div class="country-card-header">
-            <img src="https://flagcdn.com/w80/om.png" alt="Oman Flag" class="flag-img-lg" />
-            <div>
-              <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0;">Oman</h3>
-              <span style="font-size: 0.78rem; color: #166534; font-weight: 700;">Sohar Port / Muscat</span>
-            </div>
-          </div>
-          <div style="margin-top: 12px; font-size: 0.85rem; color: #475569;">
-            <p style="margin-bottom: 6px;"><strong style="color: #0f172a;">Key Products:</strong> Ground Spice Powders, Rice &amp; Grains</p>
-            <p style="margin: 0;"><strong style="color: #0f172a;">Transit Time:</strong> 4 - 6 Days</p>
-          </div>
-        </div>
-
-        <!-- Qatar -->
-        <div class="country-card-flagship">
-          <div class="country-card-header">
-            <img src="https://flagcdn.com/w80/qa.png" alt="Qatar Flag" class="flag-img-lg" />
-            <div>
-              <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0;">Qatar</h3>
-              <span style="font-size: 0.78rem; color: #166534; font-weight: 700;">Hamad Port / Doha</span>
-            </div>
-          </div>
-          <div style="margin-top: 12px; font-size: 0.85rem; color: #475569;">
-            <p style="margin-bottom: 6px;"><strong style="color: #0f172a;">Key Products:</strong> Premium Turmeric, Red Chilli Powder</p>
-            <p style="margin: 0;"><strong style="color: #0f172a;">Transit Time:</strong> 6 - 8 Days</p>
-          </div>
-        </div>
-
-        <!-- Kuwait -->
-        <div class="country-card-flagship">
-          <div class="country-card-header">
-            <img src="https://flagcdn.com/w80/kw.png" alt="Kuwait Flag" class="flag-img-lg" />
-            <div>
-              <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0;">Kuwait</h3>
-              <span style="font-size: 0.78rem; color: #166534; font-weight: 700;">Shuwaikh Port</span>
-            </div>
-          </div>
-          <div style="margin-top: 12px; font-size: 0.85rem; color: #475569;">
-            <p style="margin-bottom: 6px;"><strong style="color: #0f172a;">Key Products:</strong> Coriander Powder, Fenugreek, Oilseeds</p>
-            <p style="margin: 0;"><strong style="color: #0f172a;">Transit Time:</strong> 7 - 9 Days</p>
-          </div>
-        </div>
-
-        <!-- South Africa -->
-        <div class="country-card-flagship">
-          <div class="country-card-header">
-            <img src="https://flagcdn.com/w80/za.png" alt="South Africa Flag" class="flag-img-lg" />
-            <div>
-              <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0;">South Africa</h3>
-              <span style="font-size: 0.78rem; color: #166534; font-weight: 700;">Durban Port</span>
-            </div>
-          </div>
-          <div style="margin-top: 12px; font-size: 0.85rem; color: #475569;">
-            <p style="margin-bottom: 6px;"><strong style="color: #0f172a;">Key Products:</strong> Whole Red Chilli, Turmeric Powder</p>
-            <p style="margin: 0;"><strong style="color: #0f172a;">Transit Time:</strong> 14 - 18 Days</p>
-          </div>
-        </div>
-
-        <!-- Singapore -->
-        <div class="country-card-flagship">
-          <div class="country-card-header">
-            <img src="https://flagcdn.com/w80/sg.png" alt="Singapore Flag" class="flag-img-lg" />
-            <div>
-              <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0;">Singapore</h3>
-              <span style="font-size: 0.78rem; color: #166534; font-weight: 700;">PSA Port Singapore</span>
-            </div>
-          </div>
-          <div style="margin-top: 12px; font-size: 0.85rem; color: #475569;">
-            <p style="margin-bottom: 6px;"><strong style="color: #0f172a;">Key Products:</strong> High Curcumin Turmeric, Sortex Spices</p>
-            <p style="margin: 0;"><strong style="color: #0f172a;">Transit Time:</strong> 7 - 9 Days</p>
-          </div>
+        <!-- Filler card — CTA to enquire -->
+        <div class="exp-country-card" style="position: relative; background: linear-gradient(135deg, rgba(6, 79, 61, 0.88) 0%, rgba(20, 32, 28, 0.92) 100%), url('/images/ref_export/more_markets_bg.jpg') center/cover no-repeat; border-color: #064f3d; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 30px 20px; min-height: 240px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(20,32,28,0.1);">
+          <div style="font-size: 2.2rem; color: #f5c842; margin-bottom: 12px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));"><i class="fas fa-globe-asia"></i></div>
+          <p style="font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 800; color: #ffffff; margin: 0 0 6px 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">More Markets</p>
+          <p style="font-size: 0.82rem; color: #e5e0d5; margin: 0 0 16px 0; max-width: 200px; line-height: 1.4; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">We export to 15+ countries worldwide. Enquire for your region.</p>
+          <a href="/contact.html" style="display: inline-flex; align-items: center; gap: 6px; background: #f5c842; color: #14201c; font-size: 0.82rem; font-weight: 800; padding: 9px 18px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: all 0.3s ease;">Enquire Now <i class="fas fa-arrow-right"></i></a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ========== CONTAINER SHIPPING SPECS & PACKAGING ========== -->
-  <section style="padding: 80px 0; background: #ffffff;">
+  <!-- ========== 4. CONTAINER STUFFING SPECS (Matches Image 1) ========== -->
+  <section class="exp-sec-container">
     <div class="container">
-      <div style="text-align: center; max-width: 750px; margin: 0 auto 50px auto;">
-        <span style="color: #166534; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; font-size: 0.85rem;">CONTAINER LOGISTICS</span>
-        <h2 style="font-size: 2.2rem; font-weight: 900; color: #0f172a; margin-top: 6px;">Container Stuffing &amp; Capacity Specifications</h2>
-        <p style="color: #64748b; font-size: 0.95rem;">Standard loading capabilities for 20ft and 40ft ocean shipping containers.</p>
-      </div>
+      <div class="exp-container-layout">
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px;">
-        
-        <!-- 20ft FCL Card -->
-        <div style="background: #f8fafc; border-radius: 24px; padding: 36px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
-            <div>
-              <span style="background: #166534; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 4px 14px; border-radius: 20px; text-transform: uppercase;">Standard Load</span>
-              <h3 style="font-size: 1.8rem; font-weight: 900; color: #0f172a; margin-top: 8px;">20ft FCL Container</h3>
-            </div>
-            <i class="fas fa-box-archive" style="font-size: 2.8rem; color: #166534; opacity: 0.85;"></i>
-          </div>
-
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
-            <thead>
-              <tr style="border-bottom: 2px solid #cbd5e1; text-align: left;">
-                <th style="padding: 12px 0; color: #0f172a;">Spice Product</th>
-                <th style="padding: 12px 0; color: #0f172a;">Packing Type</th>
-                <th style="padding: 12px 0; color: #0f172a; text-align: right;">Capacity (MT)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td style="padding: 14px 0; font-weight: 700; color: #1e293b;">Turmeric Powder</td>
-                <td style="padding: 14px 0; color: #64748b;">25kg PP / Paper Bags</td>
-                <td style="padding: 14px 0; text-align: right; font-weight: 800; color: #166534;">18 - 20 MT</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td style="padding: 14px 0; font-weight: 700; color: #1e293b;">Red Chilli Powder</td>
-                <td style="padding: 14px 0; color: #64748b;">25kg Bags / Cartons</td>
-                <td style="padding: 14px 0; text-align: right; font-weight: 800; color: #166534;">16 - 18 MT</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td style="padding: 14px 0; font-weight: 700; color: #1e293b;">Whole Red Chilli</td>
-                <td style="padding: 14px 0; color: #64748b;">Compressed Gunny Bags</td>
-                <td style="padding: 14px 0; text-align: right; font-weight: 800; color: #166534;">7 - 9 MT</td>
-              </tr>
-              <tr>
-                <td style="padding: 14px 0; font-weight: 700; color: #1e293b;">Coriander Seeds</td>
-                <td style="padding: 14px 0; color: #64748b;">25kg PP Bags</td>
-                <td style="padding: 14px 0; text-align: right; font-weight: 800; color: #166534;">11 - 13 MT</td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- Left Column: Title & Subtitle -->
+        <div class="exp-container-left">
+          <div class="exp-sec-label"><span></span> CONTAINER LOGISTICS <span></span></div>
+          <h2 class="exp-sec-h2" style="font-size: 2.8rem; margin-top: 10px; margin-bottom: 16px;">Container Stuffing &amp;<br>Capacity Specifications</h2>
+          <p class="exp-sec-sub" style="font-size: 1rem; color: #4a5550; max-width: 320px; margin-bottom: 0;">Standard loading capabilities for 20ft and 40ft ocean shipping containers.</p>
         </div>
 
-        <!-- 40ft High Cube Card -->
-        <div style="background: #f8fafc; border-radius: 24px; padding: 36px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
-            <div>
-              <span style="background: #062615; color: #facc15; font-size: 0.75rem; font-weight: 800; padding: 4px 14px; border-radius: 20px; text-transform: uppercase;">High Volume Load</span>
-              <h3 style="font-size: 1.8rem; font-weight: 900; color: #0f172a; margin-top: 8px;">40ft HC Container</h3>
+        <!-- Right Column: 2 Cards Side-by-Side -->
+        <div class="exp-container-cards-grid">
+
+          <!-- 20ft FCL Container Card -->
+          <div class="exp-card-container-spec">
+            <div class="exp-spec-header-banner">
+              <i class="fas fa-box-archive exp-spec-header-icon"></i>
+              <div>
+                <h3 class="exp-spec-header-title">20ft FCL Container</h3>
+                <p class="exp-spec-header-sub">(Standard Load)</p>
+              </div>
             </div>
-            <i class="fas fa-truck-ramp-box" style="font-size: 2.8rem; color: #062615; opacity: 0.85;"></i>
+            <img src="/images/ref_export/container_20ft_stuffed.jpg" alt="20ft Stuffed Spice Container" class="exp-spec-img" />
+            <table class="exp-spec-table">
+              <thead>
+                <tr>
+                  <th>Spice Product</th>
+                  <th>Packing Type</th>
+                  <th style="text-align: center;">Capacity (MT)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="exp-prod-cell">
+                      <img src="/images/ref_export/thumb_turmeric.png" alt="Turmeric" class="exp-prod-thumb" />
+                      Turmeric Powder
+                    </div>
+                  </td>
+                  <td>25kg PP / Paper Bags</td>
+                  <td class="exp-cap-cell">18 - 20 MT</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="exp-prod-cell">
+                      <img src="/images/ref_export/thumb_chilli_powder.png" alt="Red Chilli Powder" class="exp-prod-thumb" />
+                      Red Chilli Powder
+                    </div>
+                  </td>
+                  <td>25kg Bags / Cartons</td>
+                  <td class="exp-cap-cell">16 - 18 MT</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="exp-prod-cell">
+                      <img src="/images/ref_export/thumb_whole_chilli.png" alt="Whole Red Chilli" class="exp-prod-thumb" />
+                      Whole Red Chilli
+                    </div>
+                  </td>
+                  <td>Compressed Gunny Bags</td>
+                  <td class="exp-cap-cell">7 - 9 MT</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="exp-prod-cell">
+                      <img src="/images/ref_export/thumb_coriander.png" alt="Coriander Seeds" class="exp-prod-thumb" />
+                      Coriander Seeds
+                    </div>
+                  </td>
+                  <td>25kg PP Bags</td>
+                  <td class="exp-cap-cell">11 - 13 MT</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
-            <thead>
-              <tr style="border-bottom: 2px solid #cbd5e1; text-align: left;">
-                <th style="padding: 12px 0; color: #0f172a;">Spice Product</th>
-                <th style="padding: 12px 0; color: #0f172a;">Packing Type</th>
-                <th style="padding: 12px 0; color: #0f172a; text-align: right;">Capacity (MT)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td style="padding: 14px 0; font-weight: 700; color: #1e293b;">Turmeric Powder</td>
-                <td style="padding: 14px 0; color: #64748b;">25kg / Palletized</td>
-                <td style="padding: 14px 0; text-align: right; font-weight: 800; color: #166534;">26 - 28 MT</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td style="padding: 14px 0; font-weight: 700; color: #1e293b;">Red Chilli Powder</td>
-                <td style="padding: 14px 0; color: #64748b;">25kg Poly-lined Bags</td>
-                <td style="padding: 14px 0; text-align: right; font-weight: 800; color: #166534;">24 - 26 MT</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #e2e8f0;">
-                <td style="padding: 14px 0; font-weight: 700; color: #1e293b;">Whole Red Chilli</td>
-                <td style="padding: 14px 0; color: #64748b;">Compressed Gunny Bags</td>
-                <td style="padding: 14px 0; text-align: right; font-weight: 800; color: #166534;">14 - 16 MT</td>
-              </tr>
-              <tr>
-                <td style="padding: 14px 0; font-weight: 700; color: #1e293b;">Coriander Seeds</td>
-                <td style="padding: 14px 0; color: #64748b;">25kg PP Bags</td>
-                <td style="padding: 14px 0; text-align: right; font-weight: 800; color: #166534;">22 - 24 MT</td>
-              </tr>
-            </tbody>
-          </table>
+          <!-- 40ft HC Container Card -->
+          <div class="exp-card-container-spec">
+            <div class="exp-spec-header-banner">
+              <i class="fas fa-truck-ramp-box exp-spec-header-icon"></i>
+              <div>
+                <h3 class="exp-spec-header-title">40ft HC Container</h3>
+                <p class="exp-spec-header-sub">(High Volume Load)</p>
+              </div>
+            </div>
+            <img src="/images/ref_export/container_40ft_stuffed.jpg" alt="40ft Stuffed Spice Container" class="exp-spec-img" />
+            <table class="exp-spec-table">
+              <thead>
+                <tr>
+                  <th>Spice Product</th>
+                  <th>Packing Type</th>
+                  <th style="text-align: center;">Capacity (MT)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="exp-prod-cell">
+                      <img src="/images/ref_export/thumb_turmeric.png" alt="Turmeric" class="exp-prod-thumb" />
+                      Turmeric Powder
+                    </div>
+                  </td>
+                  <td>25kg / Palletized</td>
+                  <td class="exp-cap-cell">26 - 28 MT</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="exp-prod-cell">
+                      <img src="/images/ref_export/thumb_chilli_powder.png" alt="Red Chilli Powder" class="exp-prod-thumb" />
+                      Red Chilli Powder
+                    </div>
+                  </td>
+                  <td>25kg Poly-lined Bags</td>
+                  <td class="exp-cap-cell">24 - 26 MT</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="exp-prod-cell">
+                      <img src="/images/ref_export/thumb_whole_chilli.png" alt="Whole Red Chilli" class="exp-prod-thumb" />
+                      Whole Red Chilli
+                    </div>
+                  </td>
+                  <td>Compressed Gunny Bags</td>
+                  <td class="exp-cap-cell">14 - 16 MT</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="exp-prod-cell">
+                      <img src="/images/ref_export/thumb_coriander.png" alt="Coriander Seeds" class="exp-prod-thumb" />
+                      Coriander Seeds
+                    </div>
+                  </td>
+                  <td>25kg PP Bags</td>
+                  <td class="exp-cap-cell">22 - 24 MT</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ========== EXPORT DOCUMENTATION & COMPLIANCE ========== -->
-  <section style="padding: 80px 0; background: #062615; color: #ffffff;">
+  <!-- ========== 5. EXPORT DOCUMENTATION (Matches Image 2) ========== -->
+  <section class="exp-sec-docs">
     <div class="container">
-      <div style="text-align: center; max-width: 750px; margin: 0 auto 50px auto;">
-        <span style="color: #facc15; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; font-size: 0.85rem;">COMPLIANCE &amp; DOCUMENTATION</span>
-        <h2 style="font-size: 2.3rem; font-weight: 900; color: #ffffff; margin-top: 6px;">Complete Export Documentation Desk</h2>
-        <p style="color: #cbd5e1; font-size: 0.95rem;">Every shipment is backed by verified regulatory certificates for effortless customs clearance at destination port.</p>
+      <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <div class="exp-sec-label" style="justify-content: center; color: #f5c842;"><span style="background: #f5c842;"></span> COMPLIANCE &amp; DOCUMENTATION <span style="background: #f5c842;"></span></div>
+        <h2 class="exp-sec-h2" style="font-size: 2.8rem; color: #ffffff;">Complete Export Documentation Desk</h2>
+        <p class="exp-sec-sub" style="font-size: 1rem; color: #a8b8b0; margin-bottom: 0;">Every shipment is backed by verified regulatory certificates for effortless customs clearance at destination port.</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px;">
-        
-        <div style="background: rgba(255,255,255,0.08); border-radius: 20px; padding: 28px; border: 1px solid rgba(255,255,255,0.12);">
-          <div style="font-size: 2.2rem; color: #facc15; margin-bottom: 14px;"><i class="fas fa-file-shield"></i></div>
-          <h3 style="font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 8px;">Phytosanitary Certificate</h3>
-          <p style="font-size: 0.88rem; color: #cbd5e1; margin: 0;">Issued by Plant Quarantine Organization of India, certifying pest-free cargo.</p>
+      <div class="exp-docs-grid-v2">
+
+        <!-- Card 1: Phytosanitary Certificate -->
+        <div class="exp-doc-card-v2">
+          <div>
+            <div class="exp-doc-top-row">
+              <i class="fas fa-seedling exp-doc-top-icon"></i>
+              <h3 class="exp-doc-card-h3">Phytosanitary Certificate</h3>
+            </div>
+            <p class="exp-doc-card-sub">Issued by Plant Quarantine Organization of India, certifying pest-free cargo.</p>
+          </div>
+          <img src="/images/ref_export/doc_phyto_cert.jpg" alt="Phytosanitary Certificate" class="exp-doc-card-img" />
         </div>
 
-        <div style="background: rgba(255,255,255,0.08); border-radius: 20px; padding: 28px; border: 1px solid rgba(255,255,255,0.12);">
-          <div style="font-size: 2.2rem; color: #facc15; margin-bottom: 14px;"><i class="fas fa-stamp"></i></div>
-          <h3 style="font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 8px;">Certificate of Origin (COO)</h3>
-          <p style="font-size: 0.88rem; color: #cbd5e1; margin: 0;">Legal Indian origin certificate issued by Chamber of Commerce &amp; APEDA.</p>
+        <!-- Card 2: Certificate of Origin -->
+        <div class="exp-doc-card-v2">
+          <div>
+            <div class="exp-doc-top-row">
+              <i class="fas fa-file-contract exp-doc-top-icon"></i>
+              <h3 class="exp-doc-card-h3">Certificate of Origin (COO)</h3>
+            </div>
+            <p class="exp-doc-card-sub">Legal Indian origin certificate issued by Chamber of Commerce &amp; APEDA.</p>
+          </div>
+          <img src="/images/ref_export/doc_coo_cert.jpg" alt="Certificate of Origin" class="exp-doc-card-img" />
         </div>
 
-        <div style="background: rgba(255,255,255,0.08); border-radius: 20px; padding: 28px; border: 1px solid rgba(255,255,255,0.12);">
-          <div style="font-size: 2.2rem; color: #facc15; margin-bottom: 14px;"><i class="fas fa-vial-circle-check"></i></div>
-          <h3 style="font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 8px;">Lab COA Inspection</h3>
-          <p style="font-size: 0.88rem; color: #cbd5e1; margin: 0;">Comprehensive Certificate of Analysis for moisture, ash, Scoville heat &amp; purity.</p>
+        <!-- Card 3: Lab COA Inspection -->
+        <div class="exp-doc-card-v2">
+          <div>
+            <div class="exp-doc-top-row">
+              <i class="fas fa-flask exp-doc-top-icon"></i>
+              <h3 class="exp-doc-card-h3">Lab COA Inspection</h3>
+            </div>
+            <p class="exp-doc-card-sub">Comprehensive Certificate of Analysis for moisture, ash, Scoville heat &amp; purity.</p>
+          </div>
+          <img src="/images/ref_export/doc_lab_coa.jpg" alt="Lab COA Inspection" class="exp-doc-card-img" />
         </div>
 
-        <div style="background: rgba(255,255,255,0.08); border-radius: 20px; padding: 28px; border: 1px solid rgba(255,255,255,0.12);">
-          <div style="font-size: 2.2rem; color: #facc15; margin-bottom: 14px;"><i class="fas fa-spray-can-sparkles"></i></div>
-          <h3 style="font-size: 1.2rem; font-weight: 800; color: #ffffff; margin-bottom: 8px;">Fumigation Certificate</h3>
-          <p style="font-size: 0.88rem; color: #cbd5e1; margin: 0;">Methyl Bromide / ALP container treatment before vessel loading.</p>
+        <!-- Card 4: Fumigation Certificate -->
+        <div class="exp-doc-card-v2">
+          <div>
+            <div class="exp-doc-top-row">
+              <i class="fas fa-shield-halved exp-doc-top-icon"></i>
+              <h3 class="exp-doc-card-h3">Fumigation Certificate</h3>
+            </div>
+            <p class="exp-doc-card-sub">Methyl Bromide / ALP container treatment before vessel loading.</p>
+          </div>
+          <img src="/images/ref_export/doc_fumigation.jpg" alt="Fumigation Certificate" class="exp-doc-card-img" />
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ========== CLEAN CALL TO ACTION BANNER ========== -->
-  <section class="clean-page-cta">
+  <!-- ========== 6. CTA BANNER ========== -->
+  <section class="exp-sec-cta">
+    <div class="exp-cta-bg"></div>
+    <div class="exp-cta-overlay"></div>
     <div class="container">
-      <div class="clean-page-cta-box">
+      <div class="exp-cta-content">
         <div>
-          <span style="color: #facc15; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; font-size: 0.8rem;">START YOUR EXPORT ORDER</span>
-          <h2 class="clean-cta-title">Ready to Source Container Cargo from India?</h2>
-          <p class="clean-cta-desc">Get FOB or CIF prices, container stuffing schedules, and free sample dispatches directly from our export team.</p>
+          <p class="exp-cta-label">START YOUR EXPORT ORDER</p>
+          <h2 class="exp-cta-h2">Ready to Source Container<br>Cargo from India?</h2>
+          <p class="exp-cta-desc">Get FOB or CIF prices, container stuffing schedules, and free sample dispatches directly from our export team.</p>
         </div>
-
-        <div class="clean-cta-btns">
-          <button class="btn btn-primary" data-open-modal="true" data-product="Export Container Enquiry" style="background: #facc15; color: #062615; border-color: #facc15; font-size: 0.95rem; font-weight: 800;">
+        <div class="exp-cta-btns">
+          <a href="/contact.html" class="btn-exp-quote">
             <i class="fas fa-paper-plane"></i> Request Export Quote
-          </button>
-          <a href="https://wa.me/919829377723?text=Hi%20RTM,%20I%20am%20interested%20in%20export%20containers" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: #ffffff; color: #ffffff;">
-            <i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.1rem;"></i> Chat on WhatsApp
+          </a>
+          <a href="https://wa.me/919829377723?text=Hi%20RTM,%20I%20am%20interested%20in%20export%20containers" target="_blank" rel="noopener" class="btn-exp-wa">
+            <i class="fab fa-whatsapp wa-icon"></i> Chat on WhatsApp
           </a>
         </div>
       </div>
@@ -435,10 +969,10 @@
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container footer-inner">
-      
+
       <div class="footer-col brand-col">
         <div class="footer-logo-row">
-          <img src="/Company logo.png" alt="Rajasthan Trading &amp; Manufactures Logo" class="footer-logo-img" />
+          <img src="Company logo.png" alt="Rajasthan Trading & Manufactures Logo" class="footer-logo-img" />
           <div class="footer-brand-text">
             <h3>RAJASTHAN TRADING &amp;<br>MANUFACTURES</h3>
             <p class="footer-tagline">INNOVATION, TRUST, QUALITY</p>
@@ -504,11 +1038,11 @@
       </div>
       <form class="enquiry-form" id="modalEnquiryForm">
         <div class="form-row">
-          <input type="text" id="modalFormName" required placeholder="Name *" />
-          <input type="text" id="modalFormCompany" required placeholder="Company Name *" />
+          <input type="text" id="modalFormName" name="name" required placeholder="Name *" />
+          <input type="text" id="modalFormCompany" name="company" required placeholder="Company Name *" />
         </div>
         <div class="form-row">
-          <select required id="modalFormCountry">
+          <select required id="modalFormCountry" name="country">
             <option value="" disabled selected>Country *</option>
             <option value="India">India</option>
             <option value="UAE">UAE</option>
@@ -517,14 +1051,14 @@
             <option value="Singapore">Singapore</option>
             <option value="Other">Other</option>
           </select>
-          <input type="text" id="modalFormPhone" required placeholder="WhatsApp / Phone *" />
+          <input type="text" id="modalFormPhone" name="phone" required placeholder="WhatsApp / Phone *" />
         </div>
         <div class="form-row">
-          <input type="text" id="modalFormProduct" required placeholder="Product Required *" />
-          <input type="text" id="modalFormQty" placeholder="Required Quantity *" />
+          <input type="text" id="modalFormProduct" name="product" required placeholder="Product Required *" />
+          <input type="text" id="modalFormQty" name="quantity" placeholder="Required Quantity *" />
         </div>
         <div class="form-row full">
-          <textarea id="modalFormMessage" rows="3" placeholder="Messages"></textarea>
+          <textarea id="modalFormMessage" name="message" rows="3" placeholder="Messages"></textarea>
         </div>
         <button type="submit" class="btn btn-primary btn-submit" style="width: 100%; justify-content: center; font-size: 0.95rem;">
           Send Enquiry <i class="fas fa-arrow-right"></i>
@@ -533,6 +1067,6 @@
     </div>
   </div>
 
-  <script src="/main.js" type="module"></script>
+  <script src="main.js" type="module"></script>
 </body>
 </html>

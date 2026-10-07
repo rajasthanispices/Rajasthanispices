@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 80" width="160" height="80">
+    <g transform="translate(30, 10)">
+      <!-- Blue Box Outline -->
+      <rect x="10" y="8" width="80" height="44" rx="4" fill="none" stroke="#1e40af" stroke-width="3"/>
+      <!-- GST Serif Bold Text -->
+      <text x="50" y="40" font-family="'Times New Roman', Times, serif" font-weight="bold" font-size="28" fill="#1e40af" text-anchor="middle" letter-spacing="2">GST</text>
+    </g>
+  </svg>

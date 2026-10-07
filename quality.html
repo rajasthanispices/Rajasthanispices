@@ -7,9 +7,434 @@
   <meta name="description" content="Quality assurance system at Rajasthan Trading &amp; Manufactures. Direct Mandi sourcing, cold spice grinding, Sortex color sorting, and lab certifications." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== QUALITY PAGE SPECIFIC STYLES ===== */
+
+    /* 1. Hero Section */
+    .q-hero-section {
+      width: 100%;
+      line-height: 0;
+      background: #0f172a;
+    }
+    .q-hero-section img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Common Section Labels & Titles */
+    .q-sec-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #064f3d;
+      margin-bottom: 10px;
+    }
+    .q-sec-label span {
+      display: inline-block;
+      width: 32px;
+      height: 2px;
+      background: #064f3d;
+    }
+    .q-sec-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: #14201c;
+      margin: 0 0 14px 0;
+      line-height: 1.15;
+    }
+    .q-sec-sub {
+      font-size: 0.96rem;
+      color: #5d6762;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* 2. APMC Mandi Sourcing Section */
+    .q-sec-mandi {
+      padding: 85px 0;
+      background: #f8f5ed;
+    }
+    .q-mandi-top-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    .q-mandi-text-block p {
+      font-size: 0.95rem;
+      color: #4a5550;
+      line-height: 1.7;
+      margin: 0 0 16px 0;
+    }
+    .q-mandi-banner-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 12px 32px rgba(20,32,28,0.12);
+      border: 1px solid #e0dbd1;
+    }
+
+    /* 4 Mandi Hub Cards */
+    .q-mandi-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .q-mandi-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e5e0d5;
+      box-shadow: 0 4px 16px rgba(20,32,28,0.06);
+      transition: all 0.3s ease;
+    }
+    .q-mandi-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(6, 79, 61, 0.14);
+      border-color: #064f3d;
+    }
+    .q-mandi-card-img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+    }
+    .q-mandi-card-body {
+      padding: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .q-mandi-pin-icon {
+      color: #064f3d;
+      font-size: 1.1rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .q-mandi-card-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #14201c;
+      margin: 0 0 2px 0;
+    }
+    .q-mandi-card-sub {
+      font-size: 0.8rem;
+      color: #68716d;
+      margin: 0;
+    }
+
+    /* 3. 4-Pillar Quality Assurance Section */
+    .q-sec-lab {
+      position: relative;
+      padding: 90px 0;
+      background: url('images/ref_quality/quality_lab_bg.jpg') center/cover no-repeat;
+    }
+    .q-sec-lab::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.88) 100%);
+      pointer-events: none;
+    }
+    .q-sec-lab .container {
+      position: relative;
+      z-index: 2;
+    }
+    .q-lab-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 45px;
+    }
+    .q-lab-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px 20px;
+      border: 1px solid #e5e0d5;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: all 0.3s ease;
+    }
+    .q-lab-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(6, 79, 61, 0.15);
+      border-color: #064f3d;
+    }
+    .q-lab-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: rgba(6, 79, 61, 0.08);
+      color: #064f3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .q-lab-card-h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #14201c;
+      margin: 0 0 6px 0;
+    }
+    .q-lab-card-desc {
+      font-size: 0.82rem;
+      color: #5d6762;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    /* 4. Factory Infrastructure / Processing Pipeline */
+    .q-sec-pipeline {
+      padding: 90px 0;
+      background: #ffffff;
+    }
+    .q-pipeline-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 50px;
+      position: relative;
+    }
+    .q-pipeline-card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #e5e0d5;
+      box-shadow: 0 10px 30px rgba(20,32,28,0.08);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .q-pipeline-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(6, 79, 61, 0.14);
+      border-color: #064f3d;
+    }
+    .q-pipeline-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 165px;
+      overflow: hidden;
+    }
+    .q-pipeline-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .q-pipeline-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #064f3d;
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .q-pipeline-body {
+      padding: 20px 18px 24px;
+    }
+    .q-pipeline-h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #14201c;
+      margin: 0 0 8px 0;
+      line-height: 1.3;
+    }
+    .q-pipeline-desc {
+      font-size: 0.82rem;
+      color: #5d6762;
+      line-height: 1.48;
+      margin: 0;
+    }
+
+    /* 5. Quality Certifications Section */
+    .q-sec-certs {
+      padding: 80px 0;
+      background: #f8f5ed;
+      border-top: 1px solid #e5e0d5;
+      border-bottom: 1px solid #e5e0d5;
+    }
+    .q-certs-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    .q-certs-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 16px;
+    }
+    .q-cert-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 20px 12px 16px;
+      border: 1px solid #e5e0d5;
+      box-shadow: 0 4px 14px rgba(20,32,28,0.05);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .q-cert-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(6, 79, 61, 0.12);
+      border-color: #064f3d;
+    }
+    .q-cert-card img {
+      width: 90px;
+      height: 55px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .q-cert-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #14201c;
+      margin: 0;
+    }
+
+    /* 6. CTA Banner Section */
+    .q-sec-cta {
+      position: relative;
+      padding: 85px 0;
+      overflow: hidden;
+    }
+    .q-cta-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/ref_quality/quality_cta_bg.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .q-cta-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(6,38,21,0.94) 0%, rgba(10,50,35,0.90) 100%);
+    }
+    .q-cta-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .q-cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #f5c842;
+      background: rgba(245, 200, 66, 0.15);
+      border: 1px solid rgba(245, 200, 66, 0.3);
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .q-cta-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin: 0 0 10px 0;
+      line-height: 1.2;
+    }
+    .q-cta-desc {
+      font-size: 0.95rem;
+      color: #c8dbd4;
+      margin: 0;
+      max-width: 540px;
+      line-height: 1.6;
+    }
+    .q-cta-btns {
+      display: flex;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+    .btn-q-report {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 26px;
+      background: #c53030;
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 800;
+      border-radius: 10px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .btn-q-report:hover {
+      background: #9b2c2c;
+      transform: translateY(-2px);
+    }
+    .btn-q-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 26px;
+      background: #064f3d;
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 800;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .btn-q-wa:hover {
+      background: #08634d;
+      transform: translateY(-2px);
+    }
+    .btn-q-wa .wa-icon { color: #25D366; font-size: 1.1rem; }
+
+    @media (max-width: 1100px) {
+      .q-mandi-cards-grid, .q-lab-grid, .q-pipeline-grid { grid-template-columns: repeat(2, 1fr); }
+      .q-certs-grid { grid-template-columns: repeat(4, 1fr); }
+      .q-mandi-top-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .q-mandi-cards-grid, .q-lab-grid, .q-pipeline-grid { grid-template-columns: 1fr; }
+      .q-certs-grid { grid-template-columns: repeat(2, 1fr); }
+      .q-sec-h2 { font-size: 1.9rem; }
+      .q-cta-content { flex-direction: column; align-items: flex-start; }
+      .q-cta-btns { flex-direction: column; width: 100%; }
+    }
+  </style>
 </head>
 <body>
 
@@ -31,7 +456,7 @@
   <header class="header" id="header">
     <div class="header-inner">
       <a href="/index.html" class="logo-area">
-        <img src="/Company logo.png" alt="Rajasthan Trading &amp; Manufactures Logo" class="header-logo-img" />
+        <img src="Company logo.png" alt="Rajasthan Trading &amp; Manufactures Logo" class="header-logo-img" />
         <div class="logo-text">
           <h1 class="logo-title">
             <span class="logo-green">RAJASTHAN TRADING &amp;</span><br>
@@ -51,7 +476,7 @@
       </nav>
 
       <div class="header-actions">
-        <a href="/contact.html" class="btn-quote">Contact Us</a>
+        <button class="btn-quote" data-open-modal="true" data-product="General Business Enquiry">Contact Us</button>
       </div>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
@@ -60,181 +485,244 @@
     </div>
   </header>
 
-  <!-- ========== VISUAL HERO BANNER ========== -->
-  <section class="subpage-hero" style="background-image: url('/images/hero_quality_lab_tech.png'); min-height: 320px; display: flex; align-items: center; padding: 60px 0 50px 0;">
-    <div class="container">
-      <div style="max-width: 800px; margin: 0 auto; text-align: center; background: rgba(6, 38, 21, 0.78); backdrop-filter: blur(8px); padding: 32px 28px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.35);">
-        <span class="subpage-hero-badge" style="background: rgba(250, 204, 21, 0.25); border-color: #facc15;"><i class="fas fa-shield-halved"></i> PURE ORIGIN &amp; LAB COMPLIANCE</span>
-        <h1 class="subpage-hero-title" style="font-size: 2.7rem; font-weight: 900; line-height: 1.15; margin: 10px 0 8px 0;">Quality &amp; Sourcing Desk</h1>
-        <p class="subpage-hero-subtitle" style="font-size: 1rem; color: #f1f5f9; margin-bottom: 0;">Direct Mandi procurement, hygienic cold grinding, Sortex color sorting, and lab certifications.</p>
-      </div>
-    </div>
+  <!-- ========== 1. HERO BANNER (From Outsooure page hero immage.png) ========== -->
+  <section class="q-hero-section">
+    <img src="images/ref_quality/hero_quality.png" alt="Quality &amp; Sourcing Desk — Pure Origin &amp; Lab Compliance" />
   </section>
 
-  <!-- ========== MANDI SOURCING NETWORK ========== -->
-  <section style="padding: 80px 0; background: #ffffff;">
+  <!-- ========== 2. MANDI SOURCING NETWORK ========== -->
+  <section class="q-sec-mandi">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
-        <div>
-          <div class="section-label"><span class="label-line"></span> DIRECT APMC SOURCING</div>
-          <h2 style="font-size: 2.4rem; font-weight: 900; color: #0f172a; margin-bottom: 20px; line-height: 1.2;">Strategic Spice Mandi Network</h2>
-          <p style="color: #475569; line-height: 1.7; margin-bottom: 18px;">Headquartered in Bhawani Mandi, Jhalawar, Rajasthan, we operate directly in India's richest spice-growing belt. Direct farm procurement enables us to source newly harvested crops with high volatile oils and unadulterated freshness.</p>
-          <p style="color: #475569; line-height: 1.7; margin-bottom: 28px;">By bypassing intermediate traders, we guarantee competitive wholesale pricing while maintaining complete lot traceability from farm to factory.</p>
-          
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
-            <div style="background: #f8fafc; padding: 18px; border-radius: 14px; border: 1px solid #e2e8f0; border-left: 4px solid #166534;">
-              <strong style="color: #0f172a; display: block; font-size: 0.95rem;">Ramganj &amp; MP Mandis</strong>
-              <span style="font-size: 0.8rem; color: #64748b;">India's Premier Coriander Hub</span>
-            </div>
-            <div style="background: #f8fafc; padding: 18px; border-radius: 14px; border: 1px solid #e2e8f0; border-left: 4px solid #166534;">
-              <strong style="color: #0f172a; display: block; font-size: 0.95rem;">Guntur Mandi</strong>
-              <span style="font-size: 0.8rem; color: #64748b;">Teja S17 &amp; Sannam Chilli</span>
-            </div>
-            <div style="background: #f8fafc; padding: 18px; border-radius: 14px; border: 1px solid #e2e8f0; border-left: 4px solid #166534;">
-              <strong style="color: #0f172a; display: block; font-size: 0.95rem;">Unjha &amp; Neemuch</strong>
-              <span style="font-size: 0.8rem; color: #64748b;">Cumin, Mustard &amp; Fenugreek</span>
-            </div>
-            <div style="background: #f8fafc; padding: 18px; border-radius: 14px; border: 1px solid #e2e8f0; border-left: 4px solid #166534;">
-              <strong style="color: #0f172a; display: block; font-size: 0.95rem;">Erode &amp; Salem</strong>
-              <span style="font-size: 0.8rem; color: #64748b;">High Curcumin Turmeric</span>
-            </div>
-          </div>
+      <div class="q-mandi-top-grid">
+        <div class="q-mandi-text-block">
+          <div class="q-sec-label"><span></span> DIRECT APMC SOURCING <span></span></div>
+          <h2 class="q-sec-h2">Strategic Spice Mandi Network</h2>
+          <p>Headquartered in Bhawani Mandi, Jhalawar, Rajasthan, we operate directly in India's richest spice-growing belt. Direct farm procurement enables us to source newly harvested crops with high volatile oils and unadulterated freshness.</p>
+          <p>By bypassing intermediate traders, we guarantee competitive wholesale pricing while maintaining complete lot traceability from farm to factory.</p>
         </div>
         <div>
-          <img src="/images/hero_quality_lab_tech.png" alt="RTM Quality Control Laboratory" style="border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); width: 100%; object-fit: cover;" />
+          <img src="images/ref_quality/mandi_banner.jpg" alt="Bhawani Mandi Agricultural Market" class="q-mandi-banner-img" />
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ========== 4 CORE QUALITY PARAMETERS ========== -->
-  <section style="padding: 80px 0; background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
-    <div class="container">
-      <div style="text-align: center; max-width: 750px; margin: 0 auto 50px auto;">
-        <span style="color: #166534; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; font-size: 0.85rem;">LAB TESTING STANDARDS</span>
-        <h2 style="font-size: 2.3rem; font-weight: 900; color: #0f172a; margin-top: 6px;">4-Pillar Quality Assurance</h2>
-        <p style="color: #64748b; font-size: 0.95rem;">Every batch undergoes strict physical, chemical, and organoleptic testing before release.</p>
-      </div>
+      <!-- 4 Mandi Cards Row -->
+      <div class="q-mandi-cards-grid">
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px;">
-        
-        <div style="background: #ffffff; padding: 32px; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
-          <div style="width: 56px; height: 56px; background: rgba(22, 101, 52, 0.1); color: #166534; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 20px;">
-            <i class="fas fa-palette"></i>
+        <div class="q-mandi-card">
+          <img src="images/ref_quality/mandi_coriander.jpg" alt="Ramganj Coriander" class="q-mandi-card-img" />
+          <div class="q-mandi-card-body">
+            <i class="fas fa-location-dot q-mandi-pin-icon"></i>
+            <div>
+              <p class="q-mandi-card-title">Ramganj &amp; MP Mandis</p>
+              <p class="q-mandi-card-sub">India's Premier Coriander Hub</p>
+            </div>
           </div>
-          <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 10px;">ASTA Color &amp; Heat</h3>
-          <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0;">Spectrophotometric verification for ASTA color rating in Red Chilli &amp; HPLC testing for Scoville Heat Units (SHU).</p>
         </div>
 
-        <div style="background: #ffffff; padding: 32px; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
-          <div style="width: 56px; height: 56px; background: rgba(22, 101, 52, 0.1); color: #166534; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 20px;">
-            <i class="fas fa-droplet"></i>
+        <div class="q-mandi-card">
+          <img src="images/ref_quality/mandi_guntur.jpg" alt="Guntur Chilli Mandi" class="q-mandi-card-img" />
+          <div class="q-mandi-card-body">
+            <i class="fas fa-location-dot q-mandi-pin-icon"></i>
+            <div>
+              <p class="q-mandi-card-title">Guntur Mandi</p>
+              <p class="q-mandi-card-sub">Teja S17 &amp; Sannam Chilli</p>
+            </div>
           </div>
-          <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 10px;">Volatile Oil Retention</h3>
-          <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0;">Cold grinding preserves 98%+ of natural essential oils, delivering intense natural flavor and pungency.</p>
         </div>
 
-        <div style="background: #ffffff; padding: 32px; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
-          <div style="width: 56px; height: 56px; background: rgba(22, 101, 52, 0.1); color: #166534; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 20px;">
-            <i class="fas fa-temperature-arrow-down"></i>
+        <div class="q-mandi-card">
+          <img src="images/ref_quality/mandi_unjha.jpg" alt="Unjha Cumin Mandi" class="q-mandi-card-img" />
+          <div class="q-mandi-card-body">
+            <i class="fas fa-location-dot q-mandi-pin-icon"></i>
+            <div>
+              <p class="q-mandi-card-title">Unjha &amp; Neemuch</p>
+              <p class="q-mandi-card-sub">Cumin, Mustard &amp; Fenugreek</p>
+            </div>
           </div>
-          <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 10px;">Moisture Control (&lt; 10%)</h3>
-          <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0;">Strict moisture barriers prevent clump formation, mold growth, and oxidation during storage or maritime transport.</p>
         </div>
 
-        <div style="background: #ffffff; padding: 32px; border-radius: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
-          <div style="width: 56px; height: 56px; background: rgba(22, 101, 52, 0.1); color: #166534; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 20px;">
-            <i class="fas fa-ban"></i>
+        <div class="q-mandi-card">
+          <img src="images/ref_quality/mandi_erode.jpg" alt="Erode Turmeric Mandi" class="q-mandi-card-img" />
+          <div class="q-mandi-card-body">
+            <i class="fas fa-location-dot q-mandi-pin-icon"></i>
+            <div>
+              <p class="q-mandi-card-title">Erode &amp; Salem</p>
+              <p class="q-mandi-card-sub">High Curcumin Turmeric</p>
+            </div>
           </div>
-          <h3 style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin-bottom: 10px;">Zero Adulteration</h3>
-          <p style="font-size: 0.88rem; color: #475569; line-height: 1.6; margin: 0;">Tested 100% free from Sudan dyes, lead chromate, starch fillers, and artificial coloring agents.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== HYGIENIC PROCESSING FLOW ========== -->
-  <section style="padding: 80px 0; background: #062615; color: #ffffff;">
-    <div class="container">
-      <div style="text-align: center; max-width: 750px; margin: 0 auto 50px auto;">
-        <span style="color: #facc15; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; font-size: 0.85rem;">FACTORY INFRASTRUCTURE</span>
-        <h2 style="font-size: 2.3rem; font-weight: 900; color: #ffffff; margin-top: 6px;">Advanced Hygienic Processing Pipeline</h2>
-        <p style="color: #cbd5e1; font-size: 0.95rem;">Engineered to clean, sort, and pulverize spices without thermal degradation.</p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px;">
-        
-        <div style="background: rgba(255,255,255,0.08); border-radius: 20px; padding: 28px; border: 1px solid rgba(255,255,255,0.12);">
-          <div style="font-size: 2rem; color: #facc15; margin-bottom: 14px;"><i class="fas fa-filter"></i></div>
-          <h3 style="font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 10px;">1. De-stoning &amp; Magnetic Cleaning</h3>
-          <p style="font-size: 0.88rem; color: #cbd5e1; margin: 0;">Multi-stage vibrating pre-cleaners extract dust, stones, mud, sticks, and metallic particles.</p>
-        </div>
-
-        <div style="background: rgba(255,255,255,0.08); border-radius: 20px; padding: 28px; border: 1px solid rgba(255,255,255,0.12);">
-          <div style="font-size: 2rem; color: #facc15; margin-bottom: 14px;"><i class="fas fa-eye"></i></div>
-          <h3 style="font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 10px;">2. Sortex Color Sorting</h3>
-          <p style="font-size: 0.88rem; color: #cbd5e1; margin: 0;">CCD Optical laser sorters automatically eject discolored seeds, defective pods, and foreign stems.</p>
-        </div>
-
-        <div style="background: rgba(255,255,255,0.08); border-radius: 20px; padding: 28px; border: 1px solid rgba(255,255,255,0.12);">
-          <div style="font-size: 2rem; color: #facc15; margin-bottom: 14px;"><i class="fas fa-snowflake"></i></div>
-          <h3 style="font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 10px;">3. Hygienic Cold Grinding</h3>
-          <p style="font-size: 0.88rem; color: #cbd5e1; margin: 0;">Low-temperature pulverization locks in natural aroma, volatile oils, and vibrant red/yellow color.</p>
-        </div>
-
-        <div style="background: rgba(255,255,255,0.08); border-radius: 20px; padding: 28px; border: 1px solid rgba(255,255,255,0.12);">
-          <div style="font-size: 2rem; color: #facc15; margin-bottom: 14px;"><i class="fas fa-box-open"></i></div>
-          <h3 style="font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 10px;">4. Nitrogen Barrier Packaging</h3>
-          <p style="font-size: 0.88rem; color: #cbd5e1; margin: 0;">Moisture-proof foil pouches and food-grade inner lined bulk bags preserve extended shelf life.</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ========== CERTIFICATES MARQUEE ========== -->
-  <section class="certificates-section">
+  <!-- ========== 3. LAB TESTING STANDARDS (4-Pillar QA) ========== -->
+  <section class="q-sec-lab">
     <div class="container">
-      <h2 class="section-title">Quality Certifications &amp; Accreditations</h2>
-      <div class="certificates-marquee">
-        <div class="marquee-track">
-          <div class="cert-item"><img src="/Certificates/fssai.png" alt="FSSAI Certified" /></div>
-          <div class="cert-item"><img src="/Certificates/iso.png" alt="ISO 22000" /></div>
-          <div class="cert-item"><img src="/Certificates/apeda.png" alt="APEDA Registered" /></div>
-          <div class="cert-item"><img src="/Certificates/spices board.png" alt="Spices Board India" /></div>
-          <div class="cert-item"><img src="/Certificates/halal.png" alt="Halal Certified" /></div>
-          <div class="cert-item"><img src="/Certificates/agmark.png" alt="AGMARK Grade" /></div>
-          <div class="cert-item"><img src="/Certificates/gst.png" alt="GST Registered" /></div>
+      <div style="text-align: center; max-width: 760px; margin: 0 auto;">
+        <div class="q-sec-label" style="justify-content: center;"><span></span> LAB TESTING STANDARDS <span></span></div>
+        <h2 class="q-sec-h2">4-Pillar Quality Assurance</h2>
+        <p class="q-sec-sub">Every batch undergoes strict physical, chemical, and organoleptic testing before release.</p>
+      </div>
 
-          <div class="cert-item"><img src="/Certificates/fssai.png" alt="FSSAI Certified" /></div>
-          <div class="cert-item"><img src="/Certificates/iso.png" alt="ISO 22000" /></div>
-          <div class="cert-item"><img src="/Certificates/apeda.png" alt="APEDA Registered" /></div>
-          <div class="cert-item"><img src="/Certificates/spices board.png" alt="Spices Board India" /></div>
-          <div class="cert-item"><img src="/Certificates/halal.png" alt="Halal Certified" /></div>
-          <div class="cert-item"><img src="/Certificates/agmark.png" alt="AGMARK Grade" /></div>
-          <div class="cert-item"><img src="/Certificates/gst.png" alt="GST Registered" /></div>
+      <div class="q-lab-grid">
+
+        <div class="q-lab-card">
+          <div class="q-lab-icon"><i class="fas fa-pepper-hot"></i></div>
+          <div>
+            <h3 class="q-lab-card-h3">ASTA Color &amp; Heat</h3>
+            <p class="q-lab-card-desc">Spectrophotometric verification for ASTA color rating in Red Chilli &amp; HPLC testing for Scoville Heat Units (SHU).</p>
+          </div>
         </div>
+
+        <div class="q-lab-card">
+          <div class="q-lab-icon"><i class="fas fa-droplet"></i></div>
+          <div>
+            <h3 class="q-lab-card-h3">Volatile Oil Retention</h3>
+            <p class="q-lab-card-desc">Cold grinding preserves 98%+ of natural essential oils, delivering intense natural flavor and pungency.</p>
+          </div>
+        </div>
+
+        <div class="q-lab-card">
+          <div class="q-lab-icon"><i class="fas fa-temperature-arrow-down"></i></div>
+          <div>
+            <h3 class="q-lab-card-h3">Moisture Control (&lt; 10%)</h3>
+            <p class="q-lab-card-desc">Strict moisture barriers prevent clump formation, mold growth, and oxidation during storage or maritime transport.</p>
+          </div>
+        </div>
+
+        <div class="q-lab-card">
+          <div class="q-lab-icon"><i class="fas fa-leaf"></i></div>
+          <div>
+            <h3 class="q-lab-card-h3">Zero Adulteration</h3>
+            <p class="q-lab-card-desc">Tested 100% free from Sudan dyes, lead chromate, starch fillers, and artificial coloring agents.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ========== CLEAN CALL TO ACTION BANNER ========== -->
-  <section class="clean-page-cta">
+  <!-- ========== 4. FACTORY INFRASTRUCTURE (Processing Pipeline) ========== -->
+  <section class="q-sec-pipeline">
     <div class="container">
-      <div class="clean-page-cta-box">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto;">
+        <div class="q-sec-label" style="justify-content: center;"><span></span> FACTORY INFRASTRUCTURE <span></span></div>
+        <h2 class="q-sec-h2">Advanced Hygienic Processing Pipeline</h2>
+        <p class="q-sec-sub">Engineered to clean, sort, and pulverize spices without thermal degradation.</p>
+      </div>
+
+      <div class="q-pipeline-grid">
+
+        <div class="q-pipeline-card">
+          <div class="q-pipeline-img-wrap">
+            <img src="images/ref_quality/proc_step1_destoning.jpg" alt="De-stoning &amp; Magnetic Cleaning" class="q-pipeline-img" />
+            <div class="q-pipeline-badge">01</div>
+          </div>
+          <div class="q-pipeline-body">
+            <h3 class="q-pipeline-h3">De-stoning &amp; Magnetic Cleaning</h3>
+            <p class="q-pipeline-desc">Multi-stage vibrating pre-cleaners extract dust, stones, mud, sticks, and metallic particles.</p>
+          </div>
+        </div>
+
+        <div class="q-pipeline-card">
+          <div class="q-pipeline-img-wrap">
+            <img src="images/ref_quality/proc_step2_sortex.jpg" alt="Sortex Color Sorting" class="q-pipeline-img" />
+            <div class="q-pipeline-badge">02</div>
+          </div>
+          <div class="q-pipeline-body">
+            <h3 class="q-pipeline-h3">Sortex Color Sorting</h3>
+            <p class="q-pipeline-desc">CCD Optical laser sorters automatically eject discolored seeds, defective pods, and foreign stems.</p>
+          </div>
+        </div>
+
+        <div class="q-pipeline-card">
+          <div class="q-pipeline-img-wrap">
+            <img src="images/ref_quality/proc_step3_grinding.jpg" alt="Hygienic Cold Grinding" class="q-pipeline-img" />
+            <div class="q-pipeline-badge">03</div>
+          </div>
+          <div class="q-pipeline-body">
+            <h3 class="q-pipeline-h3">Hygienic Cold Grinding</h3>
+            <p class="q-pipeline-desc">Low-temperature pulverization locks in natural aroma, volatile oils, and vibrant red/yellow color.</p>
+          </div>
+        </div>
+
+        <div class="q-pipeline-card">
+          <div class="q-pipeline-img-wrap">
+            <img src="images/ref_quality/proc_step4_packing.jpg" alt="Nitrogen Barrier Packaging" class="q-pipeline-img" />
+            <div class="q-pipeline-badge">04</div>
+          </div>
+          <div class="q-pipeline-body">
+            <h3 class="q-pipeline-h3">Nitrogen Barrier Packaging</h3>
+            <p class="q-pipeline-desc">Moisture-proof foil pouches and food-grade inner lined bulk bags preserve extended shelf life.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5. QUALITY CERTIFICATIONS & ACCREDITATIONS ========== -->
+  <section class="q-sec-certs">
+    <div class="container">
+      <div class="q-certs-header">
         <div>
-          <span style="color: #facc15; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; font-size: 0.8rem;">REQUEST COA &amp; SAMPLES</span>
-          <h2 class="clean-cta-title">Need Physical Sample Kits or Lab COA Reports?</h2>
-          <p class="clean-cta-desc">We dispatch 100g - 500g lab sample pouches worldwide along with lot-specific Certificate of Analysis.</p>
+          <div class="q-sec-label"><span></span> QUALITY CERTIFICATIONS &amp; ACCREDITATIONS <span></span></div>
+          <h2 class="q-sec-h2" style="margin-bottom: 0;">Quality Certifications &amp; Accreditations</h2>
         </div>
+        <p style="font-size: 0.92rem; color: #5d6762; margin: 0; max-width: 340px; text-align: right;">Our products comply with national and international food safety and quality standards.</p>
+      </div>
 
-        <div class="clean-cta-btns">
-          <button class="btn btn-primary" data-open-modal="true" data-product="Quality Sample &amp; COA Request" style="background: #facc15; color: #062615; border-color: #facc15; font-size: 0.95rem; font-weight: 800;">
-            <i class="fas fa-vial"></i> Request COA Lab Report
+      <div class="q-certs-grid">
+        <div class="q-cert-card">
+          <img src="Certificates/fssai.svg" alt="FSSAI Certified" />
+          <p class="q-cert-name">FSSAI Certified</p>
+        </div>
+        <div class="q-cert-card">
+          <img src="Certificates/iso.svg" alt="ISO 22000" />
+          <p class="q-cert-name">ISO 22000</p>
+        </div>
+        <div class="q-cert-card">
+          <img src="Certificates/apeda.svg" alt="APEDA Registered" />
+          <p class="q-cert-name">APEDA Registered</p>
+        </div>
+        <div class="q-cert-card">
+          <img src="Certificates/spices_board.svg" alt="Spices Board India" />
+          <p class="q-cert-name">SPICES BOARD</p>
+        </div>
+        <div class="q-cert-card">
+          <img src="Certificates/halal.svg" alt="Halal Certified" />
+          <p class="q-cert-name">Halal Certified</p>
+        </div>
+        <div class="q-cert-card">
+          <img src="Certificates/agmark.svg" alt="AGMARK Grade" />
+          <p class="q-cert-name">AGMARK Grade</p>
+        </div>
+        <div class="q-cert-card">
+          <img src="Certificates/gst.svg" alt="GST Registered" />
+          <p class="q-cert-name">GST Registered</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 6. CTA BANNER ========== -->
+  <section class="q-sec-cta">
+    <div class="q-cta-bg"></div>
+    <div class="q-cta-overlay"></div>
+    <div class="container">
+      <div class="q-cta-content">
+        <div>
+          <span class="q-cta-badge"><i class="fas fa-shield-check"></i> REQUEST COA &amp; SAMPLES</span>
+          <h2 class="q-cta-h2">Need Physical Sample Kits or<br>Lab COA Reports?</h2>
+          <p class="q-cta-desc">We dispatch 100g - 500g lab sample pouches worldwide along with lot-specific Certificate of Analysis.</p>
+        </div>
+        <div class="q-cta-btns">
+          <button class="btn-q-report" data-open-modal="true" data-product="Quality Sample &amp; COA Request">
+            <i class="fas fa-file-lines"></i> Request COA Lab Report <i class="fas fa-arrow-right"></i>
           </button>
-          <a href="https://wa.me/919829377723?text=Hi%20RTM,%20I%20want%20to%20request%20quality%20samples" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: #ffffff; color: #ffffff;">
-            <i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.1rem;"></i> Chat on WhatsApp
+          <a href="https://wa.me/919829377723?text=Hi%20RTM,%20I%20want%20to%20request%20quality%20samples" target="_blank" rel="noopener" class="btn-q-wa">
+            <i class="fab fa-whatsapp wa-icon"></i> Chat on WhatsApp
           </a>
         </div>
       </div>
@@ -244,10 +732,10 @@
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container footer-inner">
-      
+
       <div class="footer-col brand-col">
         <div class="footer-logo-row">
-          <img src="/Company logo.png" alt="Rajasthan Trading &amp; Manufactures Logo" class="footer-logo-img" />
+          <img src="Company logo.png" alt="Rajasthan Trading &amp; Manufactures Logo" class="footer-logo-img" />
           <div class="footer-brand-text">
             <h3>RAJASTHAN TRADING &amp;<br>MANUFACTURES</h3>
             <p class="footer-tagline">INNOVATION, TRUST, QUALITY</p>
