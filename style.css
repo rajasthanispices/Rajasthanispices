@@ -3921,6 +3921,325 @@ ul { list-style: none; }
   }
 }
 
+/* ==========================================================================
+   COMPREHENSIVE ULTRA-PREMIUM MOBILE & TABLET RESPONSIVE STYLES
+   ========================================================================== */
+
+/* 1. Global Responsive Base & Container Fixes */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+/* 2. Tablets & Mobile Devices (Max Width: 992px) */
+@media (max-width: 992px) {
+  /* Navigation Bar & Header Mobile Drawer */
+  .header-inner {
+    position: relative;
+  }
+  .main-nav {
+    display: none;
+  }
+  .main-nav.active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    padding: 16px 20px;
+    z-index: 9999;
+    border-bottom: 3px solid var(--green-dark, #084b24);
+  }
+  .main-nav.active .nav-link {
+    width: 100%;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-800);
+  }
+  .main-nav.active .nav-link:last-child {
+    border-bottom: none;
+  }
+  .hamburger {
+    display: block;
+    margin-left: 12px;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Grids adjustments on Tablets */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .export-dest-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .quality-mandi-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .quality-lab-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .quality-cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .pl-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .pl-pack-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* 3. Mobile Phones (Max Width: 768px) */
+@media (max-width: 768px) {
+  /* Top Bar Header */
+  .top-bar-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+  .top-info {
+    justify-content: center;
+    font-size: 0.75rem;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .header-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 70px;
+  }
+  .logo-img {
+    height: 42px;
+  }
+  .btn-quote {
+    padding: 7px 14px;
+    font-size: 0.78rem;
+  }
+
+  /* Subpage Hero Banners */
+  .about-hero-rich,
+  .pl-hero-hd,
+  .export-hero-hd,
+  .quality-hero-hd {
+    padding: 50px 16px 40px 16px !important;
+    min-height: auto !important;
+  }
+  .about-hero-title,
+  .pl-hero-content h1,
+  .export-hero-content h1,
+  .quality-hero-content h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.25 !important;
+  }
+  .about-hero-subtitle,
+  .pl-hero-subtitle,
+  .export-hero-subtitle,
+  .quality-hero-subtitle {
+    font-size: 0.88rem !important;
+  }
+
+  /* Certificates Marquee Line on Mobile */
+  .certificates-section {
+    padding: 24px 0 16px 0;
+  }
+  .certificates-marquee-wrapper {
+    padding: 16px 14px;
+    border-radius: 12px;
+  }
+  .certificates-marquee-wrapper::before,
+  .certificates-marquee-wrapper::after {
+    width: 35px;
+  }
+  .certificates-marquee-label {
+    font-size: 0.82rem;
+    letter-spacing: 0.8px;
+    margin-bottom: 14px;
+  }
+  .cert-item {
+    height: 70px;
+    min-width: 140px;
+    padding: 8px 14px;
+  }
+  .cert-item img {
+    max-height: 48px;
+    max-width: 115px;
+  }
+  .marquee-track {
+    gap: 16px;
+    animation-duration: 30s;
+  }
+  .marquee-group {
+    gap: 16px;
+  }
+
+  /* Our Markets & Contact Form Section on Mobile */
+  .markets-card {
+    padding: 22px 18px;
+  }
+  .markets-title {
+    font-size: 1.35rem;
+  }
+  .markets-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .form-card {
+    padding: 22px 18px;
+  }
+  .form-title {
+    font-size: 1.2rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+
+  /* Products Page Filters on Mobile */
+  .product-cat-filters {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .product-cat-filters::-webkit-scrollbar {
+    display: none;
+  }
+  .cat-filter-btn {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+
+  /* Quality Page Step Timeline */
+  .quality-proc-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .quality-cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* Container Logistics & Documentation Grid */
+  .export-dest-grid {
+    grid-template-columns: 1fr;
+  }
+  .container-stuffed-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .doc-card-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Private Label Page */
+  .pl-pack-grid {
+    grid-template-columns: 1fr;
+  }
+  .pl-process-grid {
+    grid-template-columns: 1fr;
+  }
+  .pl-aud-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer-bottom {
+    font-size: 0.72rem;
+    padding: 16px 12px;
+  }
+
+  /* Modal Dialog Popup on Mobile */
+  .modal-content {
+    width: 92%;
+    max-height: 90vh;
+    padding: 20px 16px;
+    border-radius: 14px;
+    overflow-y: auto;
+  }
+  .modal-header h3 {
+    font-size: 1.15rem;
+  }
+
+  /* Sticky WhatsApp Float Button */
+  .whatsapp-float {
+    bottom: 24px;
+    right: 18px;
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+  }
+}
+
+/* 4. Small Screen Mobiles (Max Width: 480px) */
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .quality-cert-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 1.6rem;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
 
 
 
