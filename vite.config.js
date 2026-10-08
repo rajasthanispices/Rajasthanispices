@@ -9,7 +9,9 @@ export default defineConfig({
 
   preview: {
     allowedHosts: [
-      'ytw2yj1l6e.preview.c35.airoapp.ai'
+      'ytw2yj1l6e.preview.c35.airoapp.ai',
+      'rtmexports.com',
+      'www.rtmexports.com'
     ]
   },
 
