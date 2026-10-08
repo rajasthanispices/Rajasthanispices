@@ -6,6 +6,13 @@ export default defineConfig({
     port: 3000,
     open: true
   },
+
+  preview: {
+    allowedHosts: [
+      'ytw2yj1l6e.preview.c35.airoapp.ai'
+    ]
+  },
+
   build: {
     rollupOptions: {
       input: {
