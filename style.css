@@ -4650,6 +4650,71 @@ html, body {
 }
 
 @media (max-width: 768px) {
+  /* 4 Services Cards 1-Column Stack on Mobile */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .product-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .service-card {
+    min-height: auto !important;
+    max-height: none !important;
+    border-radius: 16px !important;
+  }
+  .mfg-card .sc-inner,
+  .export-card .sc-inner,
+  .quality-card .sc-inner {
+    min-height: auto !important;
+    padding: 24px 20px !important;
+  }
+  .service-card.pl-card {
+    min-height: auto !important;
+    max-height: none !important;
+    background: #f6e7cf !important;
+  }
+  .pl-exact-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 520px !important;
+    object-fit: contain !important;
+    display: block !important;
+    border-radius: 16px !important;
+  }
+  
+  /* Manufacturing icons row spacing on mobile */
+  .sc-icons-row {
+    flex-wrap: wrap !important;
+    gap: 12px 14px !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  .sc-icon-item {
+    flex: initial !important;
+    min-width: 60px !important;
+  }
+  .sc-icon-item span {
+    font-size: 0.65rem !important;
+    white-space: normal !important;
+  }
+  .sc-pipe {
+    display: none !important;
+  }
+  
+  /* Quality icons wrap on mobile */
+  .q-icons-row {
+    flex-wrap: wrap !important;
+    gap: 12px 14px !important;
+    justify-content: center !important;
+  }
+  .q-icons-wrap {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
   .about-hero-ref {
     min-height: auto !important;
     padding: 50px 0 40px 0 !important;
@@ -4709,6 +4774,7 @@ html, body {
     box-sizing: border-box !important;
   }
 }
+
 
 
 
