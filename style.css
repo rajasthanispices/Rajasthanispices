@@ -357,7 +357,8 @@ ul { list-style: none; }
 .hero-bg-img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
+  object-position: center center;
   display: block;
 }
 
@@ -4238,6 +4239,100 @@ html, body {
     justify-content: center;
   }
 }
+
+/* ==========================================================================
+   ULTRA-PREMIUM MOBILE HERO BANNER SCALING & CLEAR VIEW FIXES
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero {
+    height: 340px !important;
+    min-height: 340px !important;
+    aspect-ratio: auto !important;
+  }
+  .q-hero-section,
+  .exp-hero-section,
+  .products-hero-container {
+    height: 320px !important;
+    min-height: 320px !important;
+  }
+  .q-hero-section img,
+  .exp-hero-section img,
+  .hero-full-banner-img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: left center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Fix Homepage Hero on Mobile */
+  .hero {
+    height: 300px !important;
+    min-height: 300px !important;
+    aspect-ratio: auto !important;
+  }
+  .hero-bg-img {
+    object-fit: cover !important;
+    object-position: 12% center !important;
+  }
+
+  /* Fix All Subpage Hero Banner Images on Mobile */
+  .q-hero-section,
+  .exp-hero-section,
+  .products-hero-container {
+    position: relative !important;
+    width: 100% !important;
+    height: 280px !important;
+    min-height: 280px !important;
+    overflow: hidden !important;
+    background: #0f172a !important;
+  }
+
+  .q-hero-section img,
+  .exp-hero-section img,
+  .hero-full-banner-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: left center !important;
+    display: block !important;
+  }
+
+  /* Hotspots on mobile stay aligned */
+  .spot-explore {
+    left: 4%;
+    top: 66%;
+    width: 44%;
+    height: 18%;
+  }
+  .spot-enquiry {
+    left: 50%;
+    top: 66%;
+    width: 44%;
+    height: 18%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 260px !important;
+    min-height: 260px !important;
+  }
+  .q-hero-section,
+  .exp-hero-section,
+  .products-hero-container {
+    height: 250px !important;
+    min-height: 250px !important;
+  }
+  .hero-bg-img,
+  .q-hero-section img,
+  .exp-hero-section img,
+  .hero-full-banner-img {
+    object-position: 8% center !important;
+  }
+}
+
 
 
 
