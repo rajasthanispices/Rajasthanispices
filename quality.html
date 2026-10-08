@@ -430,7 +430,7 @@
     @media (max-width: 768px) {
       .q-mandi-cards-grid, .q-lab-grid, .q-pipeline-grid { grid-template-columns: 1fr; }
       .q-certs-grid { grid-template-columns: repeat(2, 1fr); }
-      .q-sec-h2 { font-size: 1.9rem; }
+      .q-sec-h2 { font-size: clamp(1.25rem, 4.2vw, 1.9rem) !important; text-align: center !important; }
       .q-cta-content { flex-direction: column; align-items: flex-start; }
       .q-cta-btns { flex-direction: column; width: 100%; }
     }
@@ -520,7 +520,7 @@
         </div>
 
         <div class="q-mandi-card">
-          <img src="images/ref_quality/mandi_guntur.jpg" alt="Guntur Chilli Mandi" class="q-mandi-card-img" />
+          <img src="/images/mandi_guntur_vibrant.png" alt="Guntur Chilli Mandi" class="q-mandi-card-img" />
           <div class="q-mandi-card-body">
             <i class="fas fa-location-dot q-mandi-pin-icon"></i>
             <div>
@@ -665,12 +665,8 @@
   <!-- ========== 5. QUALITY CERTIFICATIONS & ACCREDITATIONS ========== -->
   <section class="q-sec-certs">
     <div class="container">
-      <div class="q-certs-header">
-        <div>
-          <div class="q-sec-label"><span></span> QUALITY CERTIFICATIONS &amp; ACCREDITATIONS <span></span></div>
-          <h2 class="q-sec-h2" style="margin-bottom: 0;">Quality Certifications &amp; Accreditations</h2>
-        </div>
-        <p style="font-size: 0.92rem; color: #5d6762; margin: 0; max-width: 340px; text-align: right;">Our products comply with national and international food safety and quality standards.</p>
+      <div class="q-certs-header" style="text-align: center; display: flex; justify-content: center; margin-bottom: 35px;">
+        <h2 class="q-sec-h2" style="margin-bottom: 0; text-align: center; width: 100%; white-space: normal;">Quality Certifications &amp; Accreditations</h2>
       </div>
 
       <div class="q-certs-grid">
@@ -730,50 +726,37 @@
   </section>
 
   <!-- ========== FOOTER ========== -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="container footer-inner">
-
-      <div class="footer-col brand-col">
+      
+      <!-- Left: Brand + Contact Info -->
+      <div class="footer-brand-block">
         <div class="footer-logo-row">
-          <img src="Company logo.png" alt="Rajasthan Trading &amp; Manufactures Logo" class="footer-logo-img" />
+          <img src="/Company logo.png" alt="Rajasthan Trading &amp; Manufactures Logo" class="footer-logo-img" />
           <div class="footer-brand-text">
             <h3>RAJASTHAN TRADING &amp;<br>MANUFACTURES</h3>
             <p class="footer-tagline">INNOVATION, TRUST, QUALITY</p>
           </div>
         </div>
-      </div>
-
-      <div class="footer-col contact-col">
-        <p><i class="fas fa-map-marker-alt"></i> Plot No. J126/A, RIICO Industrial Area,<br>Bhawani Mandi, Dist. Jhalawar,<br>Rajasthan – 326502, India</p>
-        <p><i class="fas fa-phone-alt"></i> +91 98293 77723</p>
-        <p><i class="fas fa-envelope"></i> rajasthanigold23@gmail.com</p>
-        <p><i class="fas fa-id-badge"></i> GSTIN: 08FWCPS1387D1ZB</p>
-        <p><i class="fas fa-globe"></i> rajasthanigoldspices.com</p>
-      </div>
-
-      <div class="footer-col links-col">
-        <h4>Quick Links</h4>
-        <div class="quick-links-grid">
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/about.html">About Us</a></li>
-            <li><a href="/products.html">Products</a></li>
-            <li><a href="/export.html">Export</a></li>
-          </ul>
-          <ul>
-            <li><a href="/private-label.html">Private Label</a></li>
-            <li><a href="/quality.html">Quality</a></li>
-            <li><a href="/contact.html">Contact Us</a></li>
-          </ul>
+        <div class="footer-contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> Plot No. J126/A, RIICO Industrial Area, Bhawani Mandi, Dist. Jhalawar, Rajasthan – 326502, India</p>
+          <p><i class="fas fa-phone-alt"></i> +91 98293 77723</p>
+          <p><i class="fas fa-envelope"></i> rajasthanigold23@gmail.com</p>
+          <p><i class="fas fa-id-badge"></i> GSTIN: 08FWCPS1387D1ZB</p>
         </div>
       </div>
 
-      <div class="footer-col social-col">
-        <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <!-- Right: Social Links -->
+      <div class="footer-right-block">
+        <div>
+          <p class="footer-divider-text">Follow Us</p>
+          <div class="social-icons" style="margin-top: 12px;">
+            <a href="#" class="social-fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/919829377723" class="social-wa" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
         </div>
       </div>
 
@@ -781,7 +764,7 @@
 
     <div class="footer-bottom">
       <div class="container">
-        <p>&copy; 2026 Rajasthan Trading &amp; Manufactures. All Rights Reserved.</p>
+        <p>&copy; 2026 Rajasthan Trading &amp; Manufactures. All Rights Reserved. &nbsp;|&nbsp; Bhawani Mandi, Rajasthan, India</p>
       </div>
     </div>
   </footer>

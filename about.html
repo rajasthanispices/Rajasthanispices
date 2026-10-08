@@ -86,7 +86,7 @@
   <!-- ========== 2. COMPANY PROFILE (CONCISE TEXT & OPEN ELEGANT LAYOUT) ========== -->
   <section id="company-profile" style="padding: 80px 0; background: #ffffff;">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+      <div class="about-profile-grid">
         
         <!-- Left Column: Story & Clean Open Metadata (NO BOXES) -->
         <div>
@@ -189,7 +189,7 @@
       
       <div style="text-align: center; max-width: 900px; margin: 0 auto 50px auto;">
         <div class="about-ref-label" style="justify-content: center;"><span class="label-dash"></span> OUR CORE BUSINESS CAPABILITIES</div>
-        <h2 style="font-size: 2.1rem; font-weight: 900; color: #0f172a; margin-top: 6px; white-space: nowrap;">End-to-End Solutions for the Spice Industry</h2>
+        <h2 style="font-size: 2.1rem; font-weight: 900; color: #0f172a; margin-top: 6px;">End-to-End Solutions for the Spice Industry</h2>
       </div>
 
       <!-- 5 Capabilities Cards Grid with Vibrant Colorful Icon Badges & Hover Effects -->
@@ -247,7 +247,7 @@
   <!-- ========== 5. OUR FACILITY ========== -->
   <section style="padding: 80px 0; background: #062615; color: #ffffff;">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: center;">
+      <div class="about-facility-grid">
         
         <!-- Left text block -->
         <div>
@@ -260,7 +260,7 @@
         </div>
 
         <!-- Right 2 side-by-side facility images (GUARANTEED WORKING PATHS) -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div class="about-facility-imgs-grid">
           <img src="/images/about_facility_new.png" alt="Processing Plant Machinery" style="border-radius: 16px; width: 100%; height: 240px; object-fit: cover; box-shadow: 0 15px 30px rgba(0,0,0,0.3);" onerror="this.src='/images/hero_quality_lab_tech.png'" />
           <img src="/images/hero_quality_lab_tech.png" alt="High Tech Milling Facility" style="border-radius: 16px; width: 100%; height: 240px; object-fit: cover; box-shadow: 0 15px 30px rgba(0,0,0,0.3);" onerror="this.src='/images/about_facility_new.png'" />
         </div>
@@ -272,7 +272,7 @@
   <!-- ========== 6. OUR SPICE PORTFOLIO & PACKING FORMATS (100% FIXED IMAGES) ========== -->
   <section style="padding: 80px 0; background: #ffffff;">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 48px; align-items: start;">
+      <div class="about-portfolio-grid">
         
         <!-- Left: Spice Portfolio Bowls -->
         <div>
@@ -284,7 +284,7 @@
           </p>
 
           <!-- 6 Spice Bowls Row (GUARANTEED EXISTING IMAGES) -->
-          <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; text-align: center;">
+          <div class="about-bowls-grid">
             <div>
               <div class="spice-bowl-circle">
                 <img src="/images/spices.png" alt="Red Chilli" onerror="this.src='/images/about_products_new.png'" />
@@ -368,11 +368,11 @@
       
       <div style="text-align: center; max-width: 950px; margin: 0 auto 40px auto;">
         <div class="about-ref-label" style="justify-content: center;"><span class="label-dash"></span> OUR TARGET BUYER SEGMENTS</div>
-        <h2 style="font-size: 2.1rem; font-weight: 900; color: #0f172a; margin-top: 6px; white-space: nowrap;">Partnering with Businesses Across the Value Chain</h2>
+        <h2 style="font-size: 2.1rem; font-weight: 900; color: #0f172a; margin-top: 6px;">Partnering with Businesses Across the Value Chain</h2>
       </div>
 
-      <!-- Structured 3-Column x 2-Row Grid Layout -->
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1050px; margin: 0 auto;">
+      <!-- Structured Grid Layout -->
+      <div class="about-buyers-grid">
         
         <!-- Chip 1: Distributors -->
         <div class="buyer-chip-sleek" style="display: flex; align-items: center; gap: 14px; background: #ffffff; padding: 14px 22px; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: all 0.3s ease;">
@@ -445,10 +445,11 @@
   </section>
 
   <!-- ========== FOOTER ========== -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="container footer-inner">
       
-      <div class="footer-col brand-col">
+      <!-- Left: Brand + Contact Info -->
+      <div class="footer-brand-block">
         <div class="footer-logo-row">
           <img src="/Company logo.png" alt="Rajasthan Trading &amp; Manufactures Logo" class="footer-logo-img" />
           <div class="footer-brand-text">
@@ -456,39 +457,25 @@
             <p class="footer-tagline">INNOVATION, TRUST, QUALITY</p>
           </div>
         </div>
-      </div>
-
-      <div class="footer-col contact-col">
-        <p><i class="fas fa-map-marker-alt"></i> Plot No. J126/A, RIICO Industrial Area,<br>Bhawani Mandi, Dist. Jhalawar,<br>Rajasthan – 326502, India</p>
-        <p><i class="fas fa-phone-alt"></i> +91 98293 77723</p>
-        <p><i class="fas fa-envelope"></i> rajasthanigold23@gmail.com</p>
-        <p><i class="fas fa-id-badge"></i> GSTIN: 08FWCPS1387D1ZB</p>
-        <p><i class="fas fa-globe"></i> rajasthanigoldspices.com</p>
-      </div>
-
-      <div class="footer-col links-col">
-        <h4>Quick Links</h4>
-        <div class="quick-links-grid">
-          <ul>
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/about.html">About Us</a></li>
-            <li><a href="/products.html">Products</a></li>
-            <li><a href="/export.html">Export</a></li>
-          </ul>
-          <ul>
-            <li><a href="/private-label.html">Private Label</a></li>
-            <li><a href="/quality.html">Quality</a></li>
-            <li><a href="/contact.html">Contact Us</a></li>
-          </ul>
+        <div class="footer-contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> Plot No. J126/A, RIICO Industrial Area, Bhawani Mandi, Dist. Jhalawar, Rajasthan – 326502, India</p>
+          <p><i class="fas fa-phone-alt"></i> +91 98293 77723</p>
+          <p><i class="fas fa-envelope"></i> rajasthanigold23@gmail.com</p>
+          <p><i class="fas fa-id-badge"></i> GSTIN: 08FWCPS1387D1ZB</p>
         </div>
       </div>
 
-      <div class="footer-col social-col">
-        <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <!-- Right: Social Links -->
+      <div class="footer-right-block">
+        <div>
+          <p class="footer-divider-text">Follow Us</p>
+          <div class="social-icons" style="margin-top: 12px;">
+            <a href="#" class="social-fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-li" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/919829377723" class="social-wa" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
         </div>
       </div>
 
@@ -496,7 +483,7 @@
 
     <div class="footer-bottom">
       <div class="container">
-        <p>&copy; 2026 Rajasthan Trading &amp; Manufactures. All Rights Reserved.</p>
+        <p>&copy; 2026 Rajasthan Trading &amp; Manufactures. All Rights Reserved. &nbsp;|&nbsp; Bhawani Mandi, Rajasthan, India</p>
       </div>
     </div>
   </footer>

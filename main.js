@@ -90,8 +90,9 @@ const mainNav = document.getElementById('mainNav');
 
 if (hamburger && mainNav) {
   hamburger.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
+    const isActive = mainNav.classList.toggle('active');
     hamburger.classList.toggle('active');
+    document.body.style.overflow = isActive ? 'hidden' : '';
   });
 }
 
@@ -101,6 +102,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => {
     if (mainNav) mainNav.classList.remove('active');
     if (hamburger) hamburger.classList.remove('active');
+    document.body.style.overflow = '';
   });
 });
 
