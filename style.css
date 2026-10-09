@@ -120,21 +120,12 @@ ul { list-style: none; }
   color: var(--white);
 }
 
-/* ===== TOP BAR ===== */
+/* ===== TOP BAR (REMOVED AS REQUESTED) ===== */
 .top-bar {
-  background: var(--green-dark);
-  color: var(--white);
-  padding: 8px 0;
-  font-size: 0.78rem;
+  display: none !important;
 }
 .top-bar-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
+  display: none !important;
 }
 .top-bar-left, .top-bar-right {
   display: flex;
@@ -4769,9 +4760,204 @@ html, body {
     grid-template-columns: 1fr !important;
     gap: 12px !important;
   }
-  .buyer-chip-sleek {
-    width: 100% !important;
-    box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   USER CUSTOMIZATION & CRITICAL FIXES (TOP BAR, HEADINGS, PRODUCTS, CURVED SCREEN)
+   ========================================================================== */
+
+/* 1. TOP BAR REMOVAL */
+.top-bar, .top-bar-inner {
+  display: none !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+/* 2. CURVED DISPLAY & EDGE PROTECTION (SAFE AREA PADDING) */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+:root {
+  --safe-left: max(16px, env(safe-area-inset-left));
+  --safe-right: max(16px, env(safe-area-inset-right));
+}
+
+body {
+  padding-left: env(safe-area-inset-left, 0px) !important;
+  padding-right: env(safe-area-inset-right, 0px) !important;
+}
+
+.container, 
+.header-inner, 
+.footer-inner,
+.sec-header-ref,
+.exp-hero-section,
+.pl-hero-container {
+  padding-left: max(16px, env(safe-area-inset-left, 16px)) !important;
+  padding-right: max(16px, env(safe-area-inset-right, 16px)) !important;
+  box-sizing: border-box !important;
+}
+
+/* Floating WhatsApp button safe placement for curved screens */
+.whatsapp-float {
+  right: max(16px, env(safe-area-inset-right, 16px)) !important;
+  bottom: max(20px, env(safe-area-inset-bottom, 20px)) !important;
+  z-index: 9999 !important;
+}
+
+/* 3. HEADINGS OVERHAUL (MODERN SANS-SERIF, MAX 2 LINES STRICT CLAMP) */
+.sec-title-ref,
+.hero-main-heading,
+.pl-hero-title,
+.pl-cta-heading,
+.cta-heading,
+.q-sec-h2,
+.exp-sec-h2,
+.section-head h2,
+.about-hero-title,
+.pl-hero-content h1,
+.export-hero-content h1,
+.quality-hero-content h1,
+h2.sec-title-ref,
+.markets-title,
+.form-title {
+  font-family: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.18 !important;
+  color: #14201c !important;
+  margin-top: 0 !important;
+  margin-bottom: 12px !important;
+  
+  /* Strict 2-line maximum constraint */
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  word-break: break-word !important;
+}
+
+/* Heading Sizes Desktop */
+.sec-title-ref, .q-sec-h2, .exp-sec-h2, .section-head h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem) !important;
+}
+.hero-main-heading, .pl-hero-title {
+  font-size: clamp(2rem, 3.8vw, 3rem) !important;
+}
+
+/* Heading Sizes Mobile (<=768px) */
+@media (max-width: 768px) {
+  .sec-title-ref,
+  .hero-main-heading,
+  .pl-hero-title,
+  .pl-cta-heading,
+  .cta-heading,
+  .q-sec-h2,
+  .exp-sec-h2,
+  .section-head h2,
+  .about-hero-title,
+  .pl-hero-content h1,
+  .export-hero-content h1,
+  .quality-hero-content h1 {
+    font-size: clamp(1.2rem, 4.8vw, 1.55rem) !important;
+    line-height: 1.22 !important;
+    margin-bottom: 10px !important;
+    max-height: 2.5em !important;
+  }
+}
+
+/* 4. PRODUCT CARDS & IMAGE UNCLIPPED PERFECT DISPLAY */
+.cards-grid-4, .cards-grid-3, .product-grid {
+  gap: 20px !important;
+  padding-bottom: 24px !important;
+}
+
+.product-card-exact {
+  background: #ffffff !important;
+  border: 1px solid #e5e0d5 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 6px 20px rgba(30, 40, 35, 0.04) !important;
+  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  margin-bottom: 0 !important;
+}
+
+.product-img-holder {
+  height: 250px !important;
+  background: #f8f5ed !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 16px !important;
+  overflow: hidden !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+.product-img-holder img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+  margin: 0 auto !important;
+  transition: transform 0.4s ease !important;
+}
+
+.product-card-exact:hover .product-img-holder img {
+  transform: scale(1.05) !important;
+}
+
+.product-title-bar {
+  background: #ffffff !important;
+  padding: 14px 10px !important;
+  text-align: center !important;
+  border-top: 1px solid #f1ece1 !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.product-title-bar h3 {
+  font-family: 'DM Sans', 'Inter', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: #14201c !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+}
+
+/* Mobile adjustments for Product Cards */
+@media (max-width: 768px) {
+  .product-img-holder {
+    height: 200px !important;
+    padding: 12px !important;
+  }
+  .product-title-bar {
+    padding: 12px 8px !important;
+  }
+  .product-title-bar h3 {
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-img-holder {
+    height: 180px !important;
+    padding: 10px !important;
   }
 }
 
