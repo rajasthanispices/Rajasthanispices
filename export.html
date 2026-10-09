@@ -111,12 +111,65 @@
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 20px;
-      margin-bottom: 20px;
     }
-    .exp-country-grid-row2 {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
+    .exp-more-markets-banner {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(6, 79, 61, 0.95) 0%, rgba(20, 32, 28, 0.96) 100%), url('/images/ref_export/more_markets_bg.jpg') center/cover no-repeat;
+      border: 1.5px solid #064f3d;
+      border-radius: 16px;
+      padding: 24px 32px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      box-shadow: 0 6px 20px rgba(6, 79, 61, 0.2);
+      margin-top: 10px;
+    }
+    .exp-more-markets-left {
+      display: flex;
+      align-items: center;
       gap: 20px;
+    }
+    .exp-more-markets-icon {
+      font-size: 2.5rem;
+      color: #f5c842;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+    }
+    .exp-more-markets-text h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 4px 0;
+    }
+    .exp-more-markets-text p {
+      font-size: 0.9rem;
+      color: #e5e0d5;
+      margin: 0;
+      line-height: 1.4;
+    }
+    .exp-more-markets-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f5c842;
+      color: #14201c;
+      font-size: 0.9rem;
+      font-weight: 800;
+      padding: 12px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+    .exp-more-markets-btn:hover {
+      background: #ffffff;
+      color: #064f3d;
+      transform: translateY(-2px);
     }
     .exp-country-card {
       background: #ffffff;
@@ -477,20 +530,44 @@
     .btn-exp-wa .wa-icon { color: #25D366; font-size: 1.1rem; }
 
     @media (max-width: 1100px) {
-      .exp-country-grid, .exp-country-grid-row2 { grid-template-columns: repeat(3, 1fr); }
+      .exp-country-grid { grid-template-columns: repeat(3, 1fr); }
       .exp-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .exp-stat-item { border-right: none; border-bottom: 1px solid #e5e0d5; padding: 16px 20px; }
       .exp-container-layout { grid-template-columns: 1fr; }
       .exp-docs-grid, .exp-docs-grid-v2 { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
-      .exp-country-grid, .exp-country-grid-row2 { grid-template-columns: repeat(2, 1fr); }
+      .exp-country-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
       .exp-stats-grid { grid-template-columns: 1fr; }
       .exp-sec-h2 { font-size: 1.9rem; }
       .exp-docs-grid, .exp-docs-grid-v2 { grid-template-columns: 1fr; }
       .exp-container-cards-grid { grid-template-columns: 1fr; }
       .exp-cta-content { flex-direction: column; }
       .exp-cta-btns { flex-direction: row; flex-wrap: wrap; }
+      .exp-more-markets-banner {
+        grid-column: 1 / -1;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 18px;
+        gap: 16px;
+      }
+      .exp-more-markets-left {
+        gap: 14px;
+      }
+      .exp-more-markets-icon {
+        font-size: 2rem;
+      }
+      .exp-more-markets-text h4 {
+        font-size: 1.15rem;
+      }
+      .exp-more-markets-text p {
+        font-size: 0.82rem;
+      }
+      .exp-more-markets-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 11px 18px;
+      }
     }
   </style>
 </head>
@@ -582,7 +659,7 @@
       <h2 class="exp-sec-h2">Global Export Destinations</h2>
       <p class="exp-sec-sub">Supplying high-grade Indian spices and commodities to key international maritime ports.</p>
 
-      <!-- Row 1: UAE, Saudi, Malaysia, Vietnam, Oman -->
+      <!-- Single Unified Grid: 10 Country Cards + Horizontal Banner -->
       <div class="exp-country-grid">
 
         <div class="exp-country-card">
@@ -650,11 +727,6 @@
           </div>
         </div>
 
-      </div>
-
-      <!-- Row 2: Qatar, Kuwait, South Africa, Singapore + filler -->
-      <div class="exp-country-grid-row2" style="margin-top: 20px;">
-
         <div class="exp-country-card">
           <img src="/images/ref_export/country_qatar.jpg" alt="Qatar - Doha" class="exp-country-img" />
           <div class="exp-country-body">
@@ -678,6 +750,19 @@
             <p class="exp-country-info"><i class="fas fa-anchor"></i> Shuwaikh Port</p>
             <p class="exp-country-info"><i class="fas fa-seedling"></i> Coriander Powder, Fenugreek, Oilseeds</p>
             <span class="exp-country-transit"><i class="fas fa-clock"></i> 7–9 Days</span>
+          </div>
+        </div>
+
+        <div class="exp-country-card">
+          <img src="/images/ref_export/country_oman.jpg" alt="Bahrain - Manama" class="exp-country-img" />
+          <div class="exp-country-body">
+            <div class="exp-country-flag-row">
+              <img src="https://flagcdn.com/w40/bh.png" alt="Bahrain" class="exp-country-flag" />
+              <p class="exp-country-name">Bahrain</p>
+            </div>
+            <p class="exp-country-info"><i class="fas fa-anchor"></i> Mina Salman Port / Manama</p>
+            <p class="exp-country-info"><i class="fas fa-seedling"></i> Whole Spices, Red Chilli &amp; Turmeric</p>
+            <span class="exp-country-transit"><i class="fas fa-clock"></i> 5–7 Days</span>
           </div>
         </div>
 
@@ -707,12 +792,16 @@
           </div>
         </div>
 
-        <!-- Filler card — CTA to enquire -->
-        <div class="exp-country-card" style="position: relative; background: linear-gradient(135deg, rgba(6, 79, 61, 0.88) 0%, rgba(20, 32, 28, 0.92) 100%), url('/images/ref_export/more_markets_bg.jpg') center/cover no-repeat; border-color: #064f3d; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 30px 20px; min-height: 240px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(20,32,28,0.1);">
-          <div style="font-size: 2.2rem; color: #f5c842; margin-bottom: 12px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));"><i class="fas fa-globe-asia"></i></div>
-          <p style="font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 800; color: #ffffff; margin: 0 0 6px 0; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">More Markets</p>
-          <p style="font-size: 0.82rem; color: #e5e0d5; margin: 0 0 16px 0; max-width: 200px; line-height: 1.4; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">We export to 15+ countries worldwide. Enquire for your region.</p>
-          <a href="/contact.html" style="display: inline-flex; align-items: center; gap: 6px; background: #f5c842; color: #14201c; font-size: 0.82rem; font-weight: 800; padding: 9px 18px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: all 0.3s ease;">Enquire Now <i class="fas fa-arrow-right"></i></a>
+        <!-- Horizontal Full Width More Markets Banner -->
+        <div class="exp-more-markets-banner">
+          <div class="exp-more-markets-left">
+            <div class="exp-more-markets-icon"><i class="fas fa-globe-asia"></i></div>
+            <div class="exp-more-markets-text">
+              <h4>More Markets</h4>
+              <p>We export to 15+ countries worldwide. Enquire for your custom destination.</p>
+            </div>
+          </div>
+          <a href="/contact.html" class="exp-more-markets-btn">Enquire Now <i class="fas fa-arrow-right"></i></a>
         </div>
 
       </div>
