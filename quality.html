@@ -272,52 +272,84 @@
 
     /* 5. Quality Certifications Section */
     .q-sec-certs {
-      padding: 80px 0;
-      background: #f8f5ed;
-      border-top: 1px solid #e5e0d5;
-      border-bottom: 1px solid #e5e0d5;
+      padding: 90px 0 100px;
+      background: #fbf9f4;
+      border-top: 1px solid #e8e2d5;
+      border-bottom: 1px solid #e8e2d5;
+      position: relative;
     }
     .q-certs-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 40px;
-    }
-    .q-certs-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 16px;
-    }
-    .q-cert-card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 20px 12px 16px;
-      border: 1px solid #e5e0d5;
-      box-shadow: 0 4px 14px rgba(20,32,28,0.05);
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s ease;
+      margin-bottom: 45px;
+    }
+    .q-certs-h2 {
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      font-weight: 800;
+      color: #14201c;
+      letter-spacing: -0.02em;
+      margin: 0;
+      text-align: center;
+    }
+    .q-certs-divider {
+      width: 140px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #c5a059, transparent);
+      margin: 16px auto 0;
+    }
+    .q-certs-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 20px;
+    }
+    .q-cert-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 34px 16px 26px;
+      min-height: 225px;
+      border: 1px solid #e6e0d2;
+      box-shadow: 0 8px 24px rgba(20,32,28,0.06);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     .q-cert-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 24px rgba(6, 79, 61, 0.12);
+      transform: translateY(-8px);
+      box-shadow: 0 16px 36px rgba(6, 79, 61, 0.14);
       border-color: #064f3d;
     }
+    .q-cert-img-wrap {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 95px;
+    }
     .q-cert-card img {
-      width: 90px;
-      height: 55px;
+      max-width: 115px;
+      max-height: 82px;
+      width: auto;
+      height: auto;
       object-fit: contain;
-      margin-bottom: 10px;
+      transition: transform 0.35s ease;
+    }
+    .q-cert-card:hover img {
+      transform: scale(1.08);
     }
     .q-cert-name {
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 800;
+      font-size: 0.95rem;
+      font-weight: 700;
       color: #14201c;
-      margin: 0;
+      margin: 16px 0 0;
+      line-height: 1.3;
     }
 
     /* 6. CTA Banner Section */
@@ -495,7 +527,7 @@
       <div class="q-mandi-cards-grid">
 
         <div class="q-mandi-card">
-          <img src="images/ref_quality/mandi_coriander.jpg" alt="Ramganj Coriander" class="q-mandi-card-img" />
+          <img src="/images/ref_quality/mandi_coriander_hub.jpg" alt="Ramganj Coriander Mandi" class="q-mandi-card-img" />
           <div class="q-mandi-card-body">
             <i class="fas fa-location-dot q-mandi-pin-icon"></i>
             <div>
@@ -517,7 +549,7 @@
         </div>
 
         <div class="q-mandi-card">
-          <img src="images/ref_quality/mandi_unjha.jpg" alt="Unjha Cumin Mandi" class="q-mandi-card-img" />
+          <img src="/images/ref_quality/mandi_unjha_hub.jpg" alt="Unjha Cumin &amp; Mustard Mandi" class="q-mandi-card-img" />
           <div class="q-mandi-card-body">
             <i class="fas fa-location-dot q-mandi-pin-icon"></i>
             <div>
@@ -528,7 +560,7 @@
         </div>
 
         <div class="q-mandi-card">
-          <img src="images/ref_quality/mandi_erode.jpg" alt="Erode Turmeric Mandi" class="q-mandi-card-img" />
+          <img src="/images/ref_quality/mandi_erode_hub.jpg" alt="Erode Turmeric Mandi" class="q-mandi-card-img" />
           <div class="q-mandi-card-body">
             <i class="fas fa-location-dot q-mandi-pin-icon"></i>
             <div>
@@ -651,37 +683,52 @@
   <!-- ========== 5. QUALITY CERTIFICATIONS & ACCREDITATIONS ========== -->
   <section class="q-sec-certs">
     <div class="container">
-      <div class="q-certs-header" style="text-align: center; display: flex; justify-content: center; margin-bottom: 35px;">
-        <h2 class="q-sec-h2" style="margin-bottom: 0; text-align: center; width: 100%; white-space: normal;">Quality Certifications &amp; Accreditations</h2>
+      <div class="q-certs-header">
+        <h2 class="q-certs-h2">Quality Certifications &amp; Accreditations</h2>
+        <div class="q-certs-divider"></div>
       </div>
 
       <div class="q-certs-grid">
         <div class="q-cert-card">
-          <img src="Certificates/fssai.svg" alt="FSSAI Certified" />
+          <div class="q-cert-img-wrap">
+            <img src="/Certificates/fssai_real.png" alt="FSSAI Certified" />
+          </div>
           <p class="q-cert-name">FSSAI Certified</p>
         </div>
         <div class="q-cert-card">
-          <img src="Certificates/iso.svg" alt="ISO 22000" />
+          <div class="q-cert-img-wrap">
+            <img src="/Certificates/iso_real.png" alt="ISO 22000" />
+          </div>
           <p class="q-cert-name">ISO 22000</p>
         </div>
         <div class="q-cert-card">
-          <img src="Certificates/apeda.svg" alt="APEDA Registered" />
+          <div class="q-cert-img-wrap">
+            <img src="/Certificates/apeda_real.png" alt="APEDA Registered" />
+          </div>
           <p class="q-cert-name">APEDA Registered</p>
         </div>
         <div class="q-cert-card">
-          <img src="Certificates/spices_board.svg" alt="Spices Board India" />
-          <p class="q-cert-name">SPICES BOARD</p>
+          <div class="q-cert-img-wrap">
+            <img src="/Certificates/spices_board_real.png" alt="Spices Board" />
+          </div>
+          <p class="q-cert-name">Spices Board</p>
         </div>
         <div class="q-cert-card">
-          <img src="Certificates/halal.svg" alt="Halal Certified" />
+          <div class="q-cert-img-wrap">
+            <img src="/Certificates/halal_real.png" alt="Halal Certified" />
+          </div>
           <p class="q-cert-name">Halal Certified</p>
         </div>
         <div class="q-cert-card">
-          <img src="Certificates/agmark.svg" alt="AGMARK Grade" />
+          <div class="q-cert-img-wrap">
+            <img src="/Certificates/agmark_real.png" alt="AGMARK Grade" />
+          </div>
           <p class="q-cert-name">AGMARK Grade</p>
         </div>
         <div class="q-cert-card">
-          <img src="Certificates/gst.svg" alt="GST Registered" />
+          <div class="q-cert-img-wrap">
+            <img src="/Certificates/gst_real.png" alt="GST Registered" />
+          </div>
           <p class="q-cert-name">GST Registered</p>
         </div>
       </div>
@@ -725,7 +772,7 @@
           </div>
         </div>
         <div class="footer-contact-info">
-          <p><i class="fas fa-map-marker-alt"></i> Plot No. J126/A, RIICO Industrial Area, Bhawani Mandi, Dist. Jhalawar, Rajasthan – 326502, India</p>
+          <p><i class="fas fa-map-marker-alt"></i> Plot No. J128/A, RIICO Industrial Area, Bhawani Mandi, Dist. Jhalawar, Rajasthan – 326502, India</p>
           <p><i class="fas fa-phone-alt"></i> +91 98293 77723</p>
           <p><i class="fas fa-envelope"></i> rajasthanigold23@gmail.com</p>
           <p><i class="fas fa-id-badge"></i> GSTIN: 08FWCPS1387D1ZB</p>
